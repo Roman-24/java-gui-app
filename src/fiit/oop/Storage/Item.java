@@ -1,4 +1,4 @@
-package Storage;
+package fiit.oop.Storage;
 
 abstract class Item {
 

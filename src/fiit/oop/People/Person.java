@@ -1,4 +1,4 @@
-package Employees;
+package fiit.oop.People;
 
 abstract class Person {
 

@@ -1,4 +1,4 @@
-package Employees;
+package fiit.oop.People;
 
 public class Manager extends Worker {
 
