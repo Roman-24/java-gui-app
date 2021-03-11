@@ -1,11 +1,13 @@
 package Employees;
 
-public class Worker {
+class Worker extends Person {
 
-    String name;
+    int id;
+    String email;
     String position;
 
     void work(){
         System.out.println("I like working");
     }
+
 }
