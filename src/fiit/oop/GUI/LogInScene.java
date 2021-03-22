@@ -48,7 +48,7 @@ public class LogInScene {
         return scene;
     }
 
-    private boolean checkUser(String userName, String pass){
+    public boolean checkUser(String userName, String pass){
 
         if(userName.equals("Boss") && pass.equals("0000"))
             return  true;

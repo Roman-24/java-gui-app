@@ -1,4 +1,7 @@
 package fiit.oop.People;
 
-public class Customer extends Person {
+class Customer extends Person {
+    Customer(String name, String surname) {
+        super(name, surname);
+    }
 }

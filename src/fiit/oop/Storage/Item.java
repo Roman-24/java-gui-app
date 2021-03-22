@@ -5,6 +5,11 @@ abstract class Item {
     protected String itemName;
     protected int quantity;
 
+    protected Item(String itemName, int initialQuantity){
+        this.itemName = itemName;
+        this.quantity = initialQuantity;
+    }
+
     public void Status() { /* for print quantity */
         System.out.println("You have " + quantity + " " + this.itemName + " on storage");
     }

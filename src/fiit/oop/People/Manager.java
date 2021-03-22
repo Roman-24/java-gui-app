@@ -2,9 +2,10 @@ package fiit.oop.People;
 
 public class Manager extends Worker {
 
-    Manager(String name, String position){
-        this.name = name;
-        this.position = position;
+
+    public Manager(String name, String surname, int id) {
+        super(name, surname, id);
+        this.position = "Manager";
     }
 
     void checkTheOrder(){
