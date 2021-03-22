@@ -8,5 +8,5 @@ public class Order {
     int size;
     int customerID;
     String typeOfSuit;
-    Cloth cloth;
+    Cloth clothMaterial;
 }
