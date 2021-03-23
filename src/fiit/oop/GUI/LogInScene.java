@@ -1,5 +1,6 @@
 package fiit.oop.GUI;
 
+import fiit.oop.Core.App;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,7 +11,7 @@ import javafx.stage.Stage;
 
 public class LogInScene {
 
-    public Scene makeLogIn(Stage window){
+    public static Scene makeLogIn(Stage window, App app){
 
         window.setTitle("Prihlásenie");
 
@@ -35,24 +36,13 @@ public class LogInScene {
 
         // login button
         Button loginButton = new Button("Prihlásiť sa");
-        loginButton.setOnAction(e -> {
-            checkUser(nameInput.getText(), passInput.getText());
-        });
+        loginButton.setOnAction(e -> app.checkUser(nameInput.getText(), passInput.getText()));
 
         GridPane.setConstraints(loginButton, 1, 2);
 
         grid.getChildren().addAll(userNameLabel, nameInput, passLabel, passInput, loginButton);
 
-        Scene scene = new Scene(grid, 400,400);
-
-        return scene;
+        return new Scene(grid, 400,400);
     }
 
-    public boolean checkUser(String userName, String pass){
-
-        if(userName.equals("Boss") && pass.equals("0000"))
-            return  true;
-        else
-            return false;
-    }
 }

@@ -1,48 +1,47 @@
 package fiit.oop.People;
 
-class Worker extends Person {
+public class Worker extends Person {
 
-    protected int id;
-    protected String position;
-    protected String email;
+    private int id;
 
-    Worker(String name, String surname, int id) {
+    private String position;
+    private String pass;
+    private String email;
+
+    public Worker(String name, String surname, int id, String pass) {
         super(name, surname);
         this.id = id;
+        this.pass = pass;
     }
 
-    void work(){
+    public void work(){
         System.out.println("I like working");
     }
 
 
-
-    
-
     // getters and setters
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getPosition() {
         return position;
     }
-
     public void setPosition(String position) {
         this.position = position;
     }
-
+    public String getPass() {
+        return pass;
+    }
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

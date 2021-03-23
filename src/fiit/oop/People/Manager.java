@@ -2,22 +2,20 @@ package fiit.oop.People;
 
 public class Manager extends Worker {
 
-
-    public Manager(String name, String surname, int id) {
-        super(name, surname, id);
-        this.position = "Manager";
+    public Manager(String name, String surname, int id, String pass) {
+        super(name, surname, id, pass);
+        this.setPosition("Manager");
     }
 
-    void checkTheOrder(){
-
-    }
-
-    void consultationWithTheCustomer(){
+    public void checkTheOrder(){
 
     }
 
-    void checkTheQuality(){
+    public void consultationWithTheCustomer(){
 
     }
 
+    public void checkTheQuality(){
+
+    }
 }
