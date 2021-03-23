@@ -10,30 +10,30 @@ public class App {
     public Worker actualUser;
 
     public App(){
-        workers = staffInitialization();
+        this.workers = staffInitialization();
     }
 
-    public ArrayList<Worker> staffInitialization(){
+    public ArrayList<Worker> staffInitialization() {
 
         ArrayList<Worker> workers = new ArrayList<>();
 
-        workers.add( new Manager("Romanko", "TheManager", 420, "0000") );
-        workers.add( new Designer("Kristobal", "Balenciaga", 421, "0000") );
-        workers.add( new Tailor("Anna", "Green", 430, "0000"));
+        workers.add(new Manager("Romanko", "TheManager", 420, "0000"));
+        workers.add(new Designer("Kristobal", "Balenciaga", 421, "0000"));
+        workers.add(new Tailor("Anna", "Green", 430, "0000"));
 
         return workers;
     }
 
-    public boolean checkUser(String userIdString, String pass){
+    public boolean checkUser(String userIdString, String pass) {
 
-        try{
+        try {
             int userID = Integer.parseInt(userIdString);
 
-            for(Worker i : workers){
+            for (Worker i : workers) {
 
-                if(i.getId() == userID){
+                if (i.getId() == userID) {
 
-                    if(i.getPass().equals(pass)){
+                    if (i.getPass().equals(pass)) {
                         System.out.println("Prihlásili ste sa ako: " + i.name + " " + i.surname);
                         this.actualUser = i;
                         return true;
@@ -42,7 +42,7 @@ public class App {
             }
             return false;
 
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Zadali ID v nesprávnom formáte");
             return false;
         }

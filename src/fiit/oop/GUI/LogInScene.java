@@ -1,6 +1,5 @@
 package fiit.oop.GUI;
 
-import fiit.oop.Core.App;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,40 +8,109 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.awt.event.ActionListener;
+
 public class LogInScene {
 
-    public static Scene makeLogIn(Stage window, App app){
+    private Stage window = new Stage();
+    private GridPane grid = new GridPane();
+    // name label
+    private Label userNameLabel = new Label("Meno používateľa: ");
+    // name inputs
+    private TextField nameInput = new TextField();
+    // password label
+    private Label passLabel = new Label("Heslo: ");
+    // password input
+    private TextField passInput = new TextField();
+    // login button
+    private Button loginButton = new Button("Prihlásiť sa");
+    private Scene scene = new Scene(grid, 400, 400);
+
+    public LogInScene() {
 
         window.setTitle("Prihlásenie");
 
-        GridPane grid = new GridPane();
         grid.setPadding(new Insets(10, 10, 10, 10));
         grid.setVgap(8);
         grid.setHgap(10);
 
-        // name label
-        Label userNameLabel = new Label("Meno používateľa: ");
         GridPane.setConstraints(userNameLabel, 0, 0);
-        // name inputs
-        TextField nameInput = new TextField();
+
         GridPane.setConstraints(nameInput, 1, 0);
 
-        // password label
-        Label passLabel = new Label("Heslo: ");
         GridPane.setConstraints(passLabel, 0, 1);
-        // password input
-        TextField passInput = new TextField();
-        GridPane.setConstraints(passInput, 1, 1);
 
-        // login button
-        Button loginButton = new Button("Prihlásiť sa");
-        loginButton.setOnAction(e -> app.checkUser(nameInput.getText(), passInput.getText()));
+        GridPane.setConstraints(passInput, 1, 1);
 
         GridPane.setConstraints(loginButton, 1, 2);
 
         grid.getChildren().addAll(userNameLabel, nameInput, passLabel, passInput, loginButton);
 
-        return new Scene(grid, 400,400);
+        window.setScene(scene);
+
     }
 
+    public Stage getWindow() {
+        return window;
+    }
+
+    public void setWindow(Stage window) {
+        this.window = window;
+    }
+
+    public GridPane getGrid() {
+        return grid;
+    }
+
+    public void setGrid(GridPane grid) {
+        this.grid = grid;
+    }
+
+    public Label getUserNameLabel() {
+        return userNameLabel;
+    }
+
+    public void setUserNameLabel(Label userNameLabel) {
+        this.userNameLabel = userNameLabel;
+    }
+
+    public TextField getNameInput() {
+        return nameInput;
+    }
+
+    public void setNameInput(TextField nameInput) {
+        this.nameInput = nameInput;
+    }
+
+    public Label getPassLabel() {
+        return passLabel;
+    }
+
+    public void setPassLabel(Label passLabel) {
+        this.passLabel = passLabel;
+    }
+
+    public TextField getPassInput() {
+        return passInput;
+    }
+
+    public void setPassInput(TextField passInput) {
+        this.passInput = passInput;
+    }
+
+    public Button getLoginButton() {
+        return loginButton;
+    }
+
+    public void setLoginButton(Button loginButton) {
+        this.loginButton = loginButton;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
 }

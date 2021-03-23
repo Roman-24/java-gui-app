@@ -9,4 +9,5 @@ public class Order {
     int customerID;
     String typeOfSuit;
     Cloth clothMaterial;
+
 }
