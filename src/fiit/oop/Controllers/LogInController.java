@@ -18,8 +18,8 @@ public class LogInController {
             String passInput = logInScene.getPassInput().getText();
 
             if(app.checkUser(nameInput, passInput)){
-                app.logUser();
                 logInScene.getWindow().close();
+                app.logUser();
             }
         });
     }

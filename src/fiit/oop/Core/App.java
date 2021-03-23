@@ -16,6 +16,7 @@ public class App {
     public ArrayList<Worker> workers;
     public Worker actualUser;
     public Storage storage;
+    public ArrayList<Order> orders = new ArrayList<>();
 
     public App(){
         this.workers = staffInitialization();
