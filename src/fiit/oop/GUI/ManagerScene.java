@@ -27,6 +27,7 @@ public class ManagerScene {
         grid.setHgap(10);
 
         // Menu items
+        ordersMenu.getItems().add(new MenuItem("Zobraziť objednávky"));
         ordersMenu.getItems().add(new MenuItem("Pridať novú objednávku"));
         ordersMenu.getItems().add(new MenuItem("Otvoriť existujúcu objednávku"));
 

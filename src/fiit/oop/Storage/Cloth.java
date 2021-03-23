@@ -2,9 +2,10 @@ package fiit.oop.Storage;
 
 public class Cloth extends Item {
 
-    String type;
+    // String type;
 
-    protected Cloth(String itemName, int initialQuantity) {
-        super(itemName, initialQuantity);
+    public Cloth(int initialQuantity) {
+        super("cloth", initialQuantity);
+        this.setQuantity(999999);
     }
 }

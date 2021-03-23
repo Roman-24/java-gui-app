@@ -1,8 +1,13 @@
 package fiit.oop.Core;
 
+import fiit.oop.Controllers.DesignerController;
 import fiit.oop.Controllers.ManagerController;
+import fiit.oop.Controllers.TailorController;
+import fiit.oop.GUI.DesignerScene;
 import fiit.oop.GUI.ManagerScene;
+import fiit.oop.GUI.TailorScene;
 import fiit.oop.People.*;
+import fiit.oop.Storage.Storage;
 
 import java.util.ArrayList;
 
@@ -10,6 +15,7 @@ public class App {
 
     public ArrayList<Worker> workers;
     public Worker actualUser;
+    public Storage storage;
 
     public App(){
         this.workers = staffInitialization();
@@ -21,7 +27,7 @@ public class App {
 
         workers.add(new Manager("Romanko", "TheManager", 420, "0000"));
         workers.add(new Designer("Kristobal", "Balenciaga", 421, "0000"));
-        workers.add(new Tailor("Anna", "Green", 430, "0000"));
+        workers.add(new Tailor("Anna", "Green", 430, "0000", storage));
 
         return workers;
     }
@@ -55,6 +61,15 @@ public class App {
         if(this.actualUser instanceof Manager){
             ManagerScene managerScene = new ManagerScene();
             ManagerController managerController = new ManagerController(managerScene, this);
+        }
+        else if(this.actualUser instanceof Designer){
+            DesignerScene designerScene = new DesignerScene();
+            DesignerController designerController = new DesignerController(designerScene, this);
+
+        }
+        else if(this.actualUser instanceof Tailor){
+            TailorScene tailorScene = new TailorScene();
+            TailorController tailorController = new TailorController(tailorScene, this);
         }
     }
 
