@@ -1,7 +1,10 @@
 package fiit.oop.Core;
 
 import fiit.oop.Controllers.LogInController;
+import fiit.oop.Controllers.ManagerController;
 import fiit.oop.GUI.LogInScene;
+import fiit.oop.GUI.ManagerScene;
+import fiit.oop.People.Manager;
 import javafx.stage.Stage;
 import javafx.application.Application;
 
@@ -18,9 +21,11 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws Exception {
 
-        LogInScene logInScene = new LogInScene();
+        LogInScene logInScene = new LogInScene(primaryStage);
         LogInController logInController = new LogInController(logInScene, app);
-        logInScene.getWindow().show();
+        primaryStage = logInScene.getWindow();
+        primaryStage.show();
+
     }
 
 }

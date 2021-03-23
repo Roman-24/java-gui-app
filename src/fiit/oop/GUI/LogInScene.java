@@ -8,14 +8,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.awt.event.ActionListener;
-
 public class LogInScene {
 
-    private Stage window = new Stage();
+    private Stage window;
     private GridPane grid = new GridPane();
     // name label
-    private Label userNameLabel = new Label("Meno používateľa: ");
+    private Label userNameLabel = new Label("ID používateľa: ");
     // name inputs
     private TextField nameInput = new TextField();
     // password label
@@ -26,8 +24,9 @@ public class LogInScene {
     private Button loginButton = new Button("Prihlásiť sa");
     private Scene scene = new Scene(grid, 400, 400);
 
-    public LogInScene() {
+    public LogInScene(Stage primaryStage) {
 
+        window = primaryStage;
         window.setTitle("Prihlásenie");
 
         grid.setPadding(new Insets(10, 10, 10, 10));

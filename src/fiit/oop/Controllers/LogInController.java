@@ -12,8 +12,15 @@ public class LogInController {
         this.logInScene = logInScene;
         this.app = app;
 
-        logInScene.getLoginButton().setOnAction(e ->
-                app.checkUser(logInScene.getNameInput().getText(), logInScene.getPassInput().getText())
-        );
+        logInScene.getLoginButton().setOnAction(e -> {
+
+            String nameInput = logInScene.getNameInput().getText();
+            String passInput = logInScene.getPassInput().getText();
+
+            if(app.checkUser(nameInput, passInput)){
+                app.logUser();
+                logInScene.getWindow().close();
+            }
+        });
     }
 }

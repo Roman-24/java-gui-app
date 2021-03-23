@@ -1,5 +1,7 @@
 package fiit.oop.Core;
 
+import fiit.oop.Controllers.ManagerController;
+import fiit.oop.GUI.ManagerScene;
 import fiit.oop.People.*;
 
 import java.util.ArrayList;
@@ -45,6 +47,14 @@ public class App {
         } catch (NumberFormatException e) {
             System.out.println("Zadali ID v nesprávnom formáte");
             return false;
+        }
+    }
+
+    public void logUser(){
+
+        if(this.actualUser instanceof Manager){
+            ManagerScene managerScene = new ManagerScene();
+            ManagerController managerController = new ManagerController(managerScene, this);
         }
     }
 

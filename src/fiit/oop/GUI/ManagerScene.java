@@ -37,4 +37,52 @@ public class ManagerScene {
         window.setScene(scene);
 
     }
+
+    public Stage getWindow() {
+        return window;
+    }
+
+    public void setWindow(Stage window) {
+        this.window = window;
+    }
+
+    public GridPane getGrid() {
+        return grid;
+    }
+
+    public void setGrid(GridPane grid) {
+        this.grid = grid;
+    }
+
+    public Menu getOrdersMenu() {
+        return ordersMenu;
+    }
+
+    public void setOrdersMenu(Menu ordersMenu) {
+        this.ordersMenu = ordersMenu;
+    }
+
+    public MenuBar getMenuBar() {
+        return menuBar;
+    }
+
+    public void setMenuBar(MenuBar menuBar) {
+        this.menuBar = menuBar;
+    }
+
+    public BorderPane getLayout() {
+        return layout;
+    }
+
+    public void setLayout(BorderPane layout) {
+        this.layout = layout;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
 }
