@@ -1,5 +1,6 @@
 package fiit.oop.GUI;
 
+import fiit.oop.Core.ModelApp;
 import fiit.oop.Core.Order;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -11,48 +12,42 @@ import javafx.stage.Stage;
 
 public class ShowOrderScene {
 
-    protected Order order;
+    private Stage window;
+    private GridPane grid = new GridPane();
+    private Scene scene = new Scene(grid, 400, 600);
 
-    protected Stage window;
-    protected GridPane grid = new GridPane();
-
-    // labels
-    protected Label customerID = new Label("CustomerID: " + order.getCustomerID());
-    protected Label size = new Label("Veľkosť obleku je " + order.getSize());
-    protected Label typeOfSuit = new Label("Typ obleku je: " + order.getTypeOfSuit());
-    protected Label clothMaterial = new Label("Použítý materiál: " + order.getClothMaterial().getItemName());
-    protected Label condition = new Label("Práce na objednávke sú vo fáze " + order.getCondition());
-
-    protected Scene scene = new Scene(grid, 200, 800);
-
-    public ShowOrderScene(Stage primaryStage, Order order) {
-
-        if(order == null)
-            this.order = null;
-
-        this.order = order;
+    public ShowOrderScene(Stage primaryStage, ModelApp modelApp) {
 
         window = primaryStage;
-        window.setTitle("Stav Objednávky");
+        window.setTitle("Aktuálne objednávky");
 
         grid.setPadding(new Insets(20, 20, 20, 20));
-        grid.setVgap(15);
-        grid.setHgap(15);
+        grid.setVgap(10);
+        grid.setHgap(10);
 
-        GridPane.setConstraints(customerID, 0, 0);
-        GridPane.setConstraints(size, 0, 1);
-        GridPane.setConstraints(typeOfSuit, 0, 2);
-        GridPane.setConstraints(clothMaterial, 0, 3);
-        GridPane.setConstraints(condition, 0, 4);
+        int row = 0;
+        for(Order order : modelApp.orders){
 
-        grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, condition);
+            // labels
+            Label customerID = new Label("CustomerID: " + order.getCustomerID());
+            Label size = new Label("Veľkosť obleku je " + order.getSize());
+            Label typeOfSuit = new Label("Typ obleku je: " + order.getTypeOfSuit());
+            Label clothMaterial = new Label("Použítý materiál: " + order.getClothMaterial());
+            Label condition = new Label("Práce na objednávke sú vo fáze " + order.getCondition());
+
+            GridPane.setConstraints(customerID, 0, row++);
+            GridPane.setConstraints(size, 0, row++);
+            GridPane.setConstraints(typeOfSuit, 0, row++);
+            GridPane.setConstraints(clothMaterial, 0, row++);
+            GridPane.setConstraints(condition, 0, row++);
+
+            row++;
+
+            grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, condition);
+        }
 
         window.setScene(scene);
         window.show();
     }
 
-    // konštruktor na preťažovanie pri CreatOrderScene
-    public ShowOrderScene(Stage primaryStage) {
-
-    }
 }

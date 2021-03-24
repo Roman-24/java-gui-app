@@ -11,15 +11,20 @@ import fiit.oop.Storage.Storage;
 
 import java.util.ArrayList;
 
-public class App {
+public class ModelApp {
 
     public ArrayList<Worker> workers;
+    public ArrayList<Order> orders = new ArrayList<>();
     public Worker actualUser;
     public Storage storage;
-    public ArrayList<Order> orders = new ArrayList<>();
 
-    public App(){
+    public ModelApp(){
         this.workers = staffInitialization();
+    }
+
+    public void addOrder(int customerID, int size, String typeOfSuit, String clothMaterial){
+        Order newOrder = new Order(customerID, size, typeOfSuit, clothMaterial);
+        this.orders.add(newOrder);
     }
 
     public ArrayList<Worker> staffInitialization() {

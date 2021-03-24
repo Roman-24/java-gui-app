@@ -1,25 +1,25 @@
 package fiit.oop.Controllers;
 
-import fiit.oop.Core.App;
+import fiit.oop.Core.ModelApp;
 import fiit.oop.GUI.LogInScene;
 
 public class LogInController {
 
     private LogInScene logInScene;
-    private App app;
+    private ModelApp modelApp;
 
-    public LogInController(LogInScene logInScene, App app) {
+    public LogInController(LogInScene logInScene, ModelApp modelApp) {
         this.logInScene = logInScene;
-        this.app = app;
+        this.modelApp = modelApp;
 
         logInScene.getLoginButton().setOnAction(e -> {
 
             String nameInput = logInScene.getNameInput().getText();
             String passInput = logInScene.getPassInput().getText();
 
-            if(app.checkUser(nameInput, passInput)){
+            if(modelApp.checkUser(nameInput, passInput)){
                 logInScene.getWindow().close();
-                app.logUser();
+                modelApp.logUser();
             }
         });
     }

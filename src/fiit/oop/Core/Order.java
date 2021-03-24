@@ -7,10 +7,10 @@ public class Order {
     private int customerID;
     private int size;
     private String typeOfSuit;
-    private Cloth clothMaterial;
+    private String clothMaterial;
     private int condition; // stav objednávky
 
-    public Order(int customerID, int size, String typeOfSuit, Cloth clothMaterial){
+    public Order(int customerID, int size, String typeOfSuit, String clothMaterial){
         this.customerID = customerID;
         this.size = size;
         this.typeOfSuit = typeOfSuit;
@@ -42,11 +42,11 @@ public class Order {
         this.typeOfSuit = typeOfSuit;
     }
 
-    public Cloth getClothMaterial() {
+    public String getClothMaterial() {
         return clothMaterial;
     }
 
-    public void setClothMaterial(Cloth clothMaterial) {
+    public void setClothMaterial(String clothMaterial) {
         this.clothMaterial = clothMaterial;
     }
 
