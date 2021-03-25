@@ -9,14 +9,14 @@ import javafx.scene.layout.GridPane;
 
 public class ManagerScene {
 
-    Stage window = new Stage();
-    GridPane grid = new GridPane();
+    private Stage window = new Stage();
+    private GridPane grid = new GridPane();
     // Názov položky v menu
-    Menu ordersMenu = new Menu("Objednávky");
+    private Menu ordersMenu = new Menu("Objednávky");
     // Main menu bar
-    MenuBar menuBar = new MenuBar();
-    BorderPane layout = new BorderPane();
-    Scene scene = new Scene(layout, 400,400);
+    private MenuBar menuBar = new MenuBar();
+    private BorderPane layout = new BorderPane();
+    private Scene scene = new Scene(layout, 400,400);
 
     public ManagerScene(){
 
@@ -29,7 +29,7 @@ public class ManagerScene {
         // Menu items
         ordersMenu.getItems().add(new MenuItem("Zobraziť objednávky"));
         ordersMenu.getItems().add(new MenuItem("Pridať novú objednávku"));
-        ordersMenu.getItems().add(new MenuItem("Otvoriť existujúcu objednávku"));
+        // ordersMenu.getItems().add(new MenuItem("Otvoriť existujúcu objednávku"));
 
         menuBar.getMenus().addAll(ordersMenu);
 

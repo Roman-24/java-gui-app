@@ -3,12 +3,14 @@ package fiit.oop.People;
 import fiit.oop.Core.Order;
 import fiit.oop.Storage.Storage;
 
+import java.util.ArrayList;
+
 public class Tailor extends Worker{
 
     Storage storage;
 
-    public Tailor(String name, String surname, int id, String pass, Storage storage) {
-        super(name, surname, id, pass);
+    public Tailor(String name, String surname, int id, String pass, ArrayList<Order> orders, Storage storage) {
+        super(name, surname, id, pass, orders);
         this.setPosition("Tailor");
         this.storage = storage;
     }
@@ -58,4 +60,11 @@ public class Tailor extends Worker{
         }
     }
 
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
 }

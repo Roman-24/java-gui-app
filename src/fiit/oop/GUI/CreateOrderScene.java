@@ -12,24 +12,24 @@ import javafx.stage.Stage;
 
 public class CreateOrderScene {
 
-    protected Stage window;
-    protected GridPane grid = new GridPane();
+    private Stage window;
+    private GridPane grid = new GridPane();
 
     // labels
-    protected Label customerID = new Label("CustomerID: ");
-    protected Label size = new Label("Veľkosť obleku: ");
-    protected Label typeOfSuit = new Label("Typ obleku: ");
-    protected Label clothMaterial = new Label("Požadovaný materiál: ");
+    private Label customerID = new Label("CustomerID: ");
+    private Label size = new Label("Veľkosť obleku: ");
+    private Label typeOfSuit = new Label("Typ obleku: ");
+    private Label clothMaterial = new Label("Požadovaný materiál: ");
 
     // TextFields
-    protected TextField customerIDInput = new TextField();
-    protected TextField sizeInput = new TextField();
-    protected TextField typeOfSuitInput = new TextField();
-    protected TextField clothMaterialInput = new TextField();
+    private TextField customerIDInput = new TextField();
+    private TextField sizeInput = new TextField();
+    private TextField typeOfSuitInput = new TextField();
+    private TextField clothMaterialInput = new TextField();
 
-    protected Button createButton = new Button("Vytvoriť objednávku");
-    protected Scene scene = new Scene(grid, 300, 200);
-    protected ModelApp modelApp;
+    private Button createButton = new Button("Vytvoriť objednávku");
+    private Scene scene = new Scene(grid, 300, 200);
+    private ModelApp modelApp;
 
     public CreateOrderScene(Stage primaryStage, ModelApp modelApp) {
         this.modelApp = modelApp;

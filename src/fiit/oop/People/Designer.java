@@ -1,10 +1,18 @@
 package fiit.oop.People;
 
-public class Designer extends Worker{
+import fiit.oop.Core.Order;
 
-    public Designer(String name, String surname, int id, String pass) {
-        super(name, surname, id, pass);
+import java.util.ArrayList;
+
+public class Designer extends Worker {
+
+    public Designer(String name, String surname, int id, String pass, ArrayList<Order> orders) {
+        super(name, surname, id, pass, orders);
         this.setPosition("Designer");
     }
 
+    public void setDesign(Order order, String design) {
+        order.setDesign(true);
+        order.setDesignDescription(design);
+    }
 }

@@ -30,7 +30,7 @@ public class LogInScene {
         window.setTitle("Prihlásenie");
 
         grid.setPadding(new Insets(10, 10, 10, 10));
-        grid.setVgap(8);
+        grid.setVgap(10);
         grid.setHgap(10);
 
         GridPane.setConstraints(userNameLabel, 0, 0);

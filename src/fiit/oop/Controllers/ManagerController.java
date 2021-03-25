@@ -4,7 +4,6 @@ import fiit.oop.Core.ModelApp;
 import fiit.oop.GUI.CreateOrderScene;
 import fiit.oop.GUI.ManagerScene;
 import fiit.oop.GUI.ShowOrderScene;
-import fiit.oop.Storage.Cloth;
 import javafx.stage.Stage;
 
 public class ManagerController {

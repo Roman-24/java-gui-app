@@ -31,9 +31,9 @@ public class ModelApp {
 
         ArrayList<Worker> workers = new ArrayList<>();
 
-        workers.add(new Manager("Romanko", "TheManager", 420, "0000"));
-        workers.add(new Designer("Kristobal", "Balenciaga", 421, "0000"));
-        workers.add(new Tailor("Anna", "Green", 430, "0000", storage));
+        workers.add(new Manager("Romanko", "TheManager", 420, "0000", orders));
+        workers.add(new Designer("Kristobal", "Balenciaga", 421, "0000", orders));
+        workers.add(new Tailor("Anna", "Green", 430, "0000", orders, storage));
 
         return workers;
     }
