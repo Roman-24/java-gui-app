@@ -2,6 +2,7 @@ package fiit.oop.Controllers;
 
 import fiit.oop.Core.ModelApp;
 import fiit.oop.GUI.DesignerScene;
+import fiit.oop.GUI.LogInScene;
 import fiit.oop.GUI.ShowOrderScene;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -35,9 +36,27 @@ public class DesignerController {
 
             int orderNumber = Integer.valueOf(designerScene.getIncludeOrderNumberInput().getText());
             String designDescription =  designerScene.getIncludeYourDesignInput().getText();
+
+            modelApp.findOrderAndSetDesign(orderNumber, designDescription);
+
             showOrderScene.getWindow().close();
 
-
         });
+
+        designerScene.getLogoutButton().setOnAction(e -> {
+            reLog();
+        });
+    }
+
+    private void reLog(){
+        System.out.println("Odhlás managera");
+
+        designerScene.getWindow().close();
+
+        Stage primaryStage = new Stage();
+        LogInScene logInScene = new LogInScene(primaryStage);
+        LogInController logInController = new LogInController(logInScene, modelApp);
+        primaryStage = logInScene.getWindow();
+        primaryStage.show();
     }
 }

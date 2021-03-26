@@ -21,13 +21,14 @@ public class DesignerScene {
     private TextField includeOrderNumberInput = new TextField();
 
     private Button setDesignButton = new Button("Odoslať dizajn");
+    private Button logoutButton = new Button("Odhlasiť");
     private Scene scene = new Scene(vbox, 400,400);
 
     public DesignerScene(){
         window.setTitle("Ste prihlásený ako Designer");
 
         vbox.setPadding(new Insets(10, 10, 10, 10));
-        vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput, includeYourDesign, includeYourDesignInput, setDesignButton);
+        vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput, includeYourDesign, includeYourDesignInput, setDesignButton, logoutButton);
 
         window.setScene(scene);
     }
@@ -102,5 +103,13 @@ public class DesignerScene {
 
     public void setScene(Scene scene) {
         this.scene = scene;
+    }
+
+    public Button getLogoutButton() {
+        return logoutButton;
+    }
+
+    public void setLogoutButton(Button logoutButton) {
+        this.logoutButton = logoutButton;
     }
 }

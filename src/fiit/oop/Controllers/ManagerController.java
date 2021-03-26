@@ -2,6 +2,7 @@ package fiit.oop.Controllers;
 
 import fiit.oop.Core.ModelApp;
 import fiit.oop.GUI.CreateOrderScene;
+import fiit.oop.GUI.LogInScene;
 import fiit.oop.GUI.ManagerScene;
 import fiit.oop.GUI.ShowOrderScene;
 import javafx.stage.Stage;
@@ -27,6 +28,10 @@ public class ManagerController {
             System.out.println("Zobrazenie objednávok");
             new ShowOrderScene(new Stage(), modelApp);
         });
+
+        managerScene.getLogoutButton().setOnAction(e -> {
+            reLog();
+        });
     }
 
     private void createNewOrder(){
@@ -45,5 +50,17 @@ public class ManagerController {
             createOrderScene.getWindow().close();
 
         });
+    }
+
+    private void reLog(){
+        System.out.println("Odhlás managera");
+
+        managerScene.getWindow().close();
+
+        Stage primaryStage = new Stage();
+        LogInScene logInScene = new LogInScene(primaryStage);
+        LogInController logInController = new LogInController(logInScene, modelApp);
+        primaryStage = logInScene.getWindow();
+        primaryStage.show();
     }
 }

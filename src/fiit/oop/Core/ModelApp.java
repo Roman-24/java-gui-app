@@ -27,6 +27,15 @@ public class ModelApp {
         this.orders.add(newOrder);
     }
 
+    public void findOrderAndSetDesign(int orderID, String design){
+
+        for (Order order : orders)
+            if(orderID == order.getCustomerID()){
+                order.setDesignDescription(design);
+                order.setDesign(true);
+            }
+    }
+
     public ArrayList<Worker> staffInitialization() {
 
         ArrayList<Worker> workers = new ArrayList<>();

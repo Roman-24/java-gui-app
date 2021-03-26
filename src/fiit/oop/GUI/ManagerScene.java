@@ -1,5 +1,6 @@
 package fiit.oop.GUI;
 
+import fiit.oop.Storage.Buttons;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -16,6 +17,7 @@ public class ManagerScene {
     // Main menu bar
     private MenuBar menuBar = new MenuBar();
     private BorderPane layout = new BorderPane();
+    private Button logoutButton = new Button("Odhlasiť");
     private Scene scene = new Scene(layout, 400,400);
 
     public ManagerScene(){
@@ -34,6 +36,7 @@ public class ManagerScene {
         menuBar.getMenus().addAll(ordersMenu);
 
         layout.setTop(menuBar);
+        layout.setRight(logoutButton);
 
         window.setScene(scene);
 
@@ -77,6 +80,14 @@ public class ManagerScene {
 
     public void setLayout(BorderPane layout) {
         this.layout = layout;
+    }
+
+    public Button getLogoutButton() {
+        return logoutButton;
+    }
+
+    public void setLogoutButton(Button logoutButton) {
+        this.logoutButton = logoutButton;
     }
 
     public Scene getScene() {
