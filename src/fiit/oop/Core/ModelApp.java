@@ -88,4 +88,12 @@ public class ModelApp {
         }
     }
 
+    public Worker getTailor(){
+
+        for(Worker i : workers)
+            if(i instanceof Tailor)
+                return i;
+        return null;
+    }
+
 }
