@@ -19,10 +19,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         LogInScene logInScene = new LogInScene(primaryStage);
-        LogInController logInController = new LogInController(logInScene, modelApp);
-        primaryStage = logInScene.getWindow();
-        primaryStage.show();
-
+        new LogInController(logInScene, modelApp);
+        // LogInController logInController = 
     }
 
 }

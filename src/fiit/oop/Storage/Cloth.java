@@ -8,4 +8,9 @@ public class Cloth extends Item {
         super("cloth", initialQuantity);
         this.setQuantity(999999);
     }
+
+    public Cloth(String itemName, int initialQuantity) {
+        super(itemName, initialQuantity);
+    }
+
 }

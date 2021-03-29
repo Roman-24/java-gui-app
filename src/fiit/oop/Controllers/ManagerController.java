@@ -53,14 +53,10 @@ public class ManagerController {
     }
 
     private void reLog(){
-        System.out.println("Odhlás managera");
 
         managerScene.getWindow().close();
 
-        Stage primaryStage = new Stage();
-        LogInScene logInScene = new LogInScene(primaryStage);
+        LogInScene logInScene = new LogInScene(new Stage());
         LogInController logInController = new LogInController(logInScene, modelApp);
-        primaryStage = logInScene.getWindow();
-        primaryStage.show();
     }
 }

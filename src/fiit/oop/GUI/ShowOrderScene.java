@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 public class ShowOrderScene {
 
     private Stage window;
-    private VBox vbox = new VBox();
+    private GridPane vbox = new GridPane();
     private Scene scene = new Scene(vbox, 400, 600);
 
     public ShowOrderScene(Stage primaryStage, ModelApp modelApp) {
@@ -61,11 +61,11 @@ public class ShowOrderScene {
         this.window = window;
     }
 
-    public VBox getVbox() {
+    public GridPane getVbox() {
         return vbox;
     }
 
-    public void setVbox(VBox vbox) {
+    public void setVbox(GridPane vbox) {
         this.vbox = vbox;
     }
 

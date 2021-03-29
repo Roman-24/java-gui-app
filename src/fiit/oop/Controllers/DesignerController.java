@@ -20,7 +20,7 @@ public class DesignerController {
 
     private DesignerScene designerScene;
     private ModelApp modelApp;
-    ShowOrderScene showOrderScene;
+    private ShowOrderScene showOrderScene;
     public DesignerController(DesignerScene designerScene, ModelApp modelApp) {
         this.designerScene = designerScene;
         this.modelApp = modelApp;
@@ -39,7 +39,8 @@ public class DesignerController {
 
             modelApp.findOrderAndSetDesign(orderNumber, designDescription);
 
-            showOrderScene.getWindow().close();
+            if(showOrderScene != null)
+                showOrderScene.getWindow().close();
 
         });
 
@@ -49,14 +50,66 @@ public class DesignerController {
     }
 
     private void reLog(){
-        System.out.println("Odhlás managera");
 
         designerScene.getWindow().close();
 
-        Stage primaryStage = new Stage();
-        LogInScene logInScene = new LogInScene(primaryStage);
+        LogInScene logInScene = new LogInScene(new Stage());
         LogInController logInController = new LogInController(logInScene, modelApp);
-        primaryStage = logInScene.getWindow();
-        primaryStage.show();
+    }
+
+    public Stage getWindow() {
+        return window;
+    }
+
+    public void setWindow(Stage window) {
+        this.window = window;
+    }
+
+    public GridPane getGrid() {
+        return grid;
+    }
+
+    public void setGrid(GridPane grid) {
+        this.grid = grid;
+    }
+
+    public BorderPane getLayout() {
+        return layout;
+    }
+
+    public void setLayout(BorderPane layout) {
+        this.layout = layout;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public DesignerScene getDesignerScene() {
+        return designerScene;
+    }
+
+    public void setDesignerScene(DesignerScene designerScene) {
+        this.designerScene = designerScene;
+    }
+
+    public ModelApp getModelApp() {
+        return modelApp;
+    }
+
+    public void setModelApp(ModelApp modelApp) {
+        this.modelApp = modelApp;
+    }
+
+    public ShowOrderScene getShowOrderScene() {
+        return showOrderScene;
+    }
+
+    public void setShowOrderScene(ShowOrderScene showOrderScene) {
+        this.showOrderScene = showOrderScene;
     }
 }

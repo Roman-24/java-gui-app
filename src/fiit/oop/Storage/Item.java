@@ -15,6 +15,7 @@ abstract class Item {
     }
 
     // get and set quantity methods
+
     public String getItemName() {
         return itemName;
     }

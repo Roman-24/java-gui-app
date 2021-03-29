@@ -22,7 +22,7 @@ public class LogInScene {
     private TextField passInput = new TextField();
     // login button
     private Button loginButton = new Button("Prihlásiť sa");
-    private Scene scene = new Scene(grid, 400, 400);
+    private Scene scene;
 
     public LogInScene(Stage primaryStage) {
 
@@ -45,7 +45,11 @@ public class LogInScene {
 
         grid.getChildren().addAll(userNameLabel, nameInput, passLabel, passInput, loginButton);
 
+        scene = new Scene(grid, 400, 400);
+
         window.setScene(scene);
+
+        window.show();
 
     }
 

@@ -14,10 +14,8 @@ public class TailorScene {
     private VBox vbox = new VBox();
     private Button showOrdersButton = new Button("Zobraziť objednávky");
 
-
     private Label includeOrderNumber = new Label("Zadajte číslo objednávky na kt. chcete pracovať");
     private TextField includeOrderNumberInput = new TextField();
-
 
     private Button logoutButton = new Button("Odhlasiť");
     private Scene scene = new Scene(vbox, 400,400);

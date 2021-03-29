@@ -14,12 +14,13 @@ import java.util.ArrayList;
 public class ModelApp {
 
     public ArrayList<Worker> workers;
-    public ArrayList<Order> orders = new ArrayList<>();
+    public ArrayList<Order> orders;
     public Worker actualUser;
-    public Storage storage;
+    public Storage storage = new Storage();
 
     public ModelApp(){
         this.workers = staffInitialization();
+        this.orders = new ArrayList<>();
     }
 
     public void addOrder(int customerID, int size, String typeOfSuit, String clothMaterial){
@@ -34,6 +35,16 @@ public class ModelApp {
                 order.setDesignDescription(design);
                 order.setDesign(true);
             }
+    }
+
+    public Order findOrder(int orderID){
+
+        for (Order order : orders)
+            if(orderID == order.getCustomerID()){
+                System.out.println("hľadaná objednávka " + order.getCustomerID());
+                return order;
+            }
+        return null;
     }
 
     public ArrayList<Worker> staffInitialization() {
@@ -88,11 +99,11 @@ public class ModelApp {
         }
     }
 
-    public Worker getTailor(){
+    public Tailor getTailor(){
 
         for(Worker i : workers)
             if(i instanceof Tailor)
-                return i;
+                return (Tailor)i;
         return null;
     }
 

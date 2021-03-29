@@ -1,16 +1,14 @@
 package fiit.oop.Storage;
 
-import java.awt.*;
-
 public class Storage {
 
     private Cloth cloth;
     private Buttons buttons;
 
 
-    Storage(){
-        Cloth cloth = new Cloth(999999);
-        Buttons buttons = new Buttons(9999);
+    public Storage(){
+        cloth = new Cloth(999999);
+        buttons = new Buttons(9999);
     }
 
     public Cloth getCloth() {

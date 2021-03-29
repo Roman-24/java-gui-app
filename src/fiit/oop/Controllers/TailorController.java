@@ -1,20 +1,64 @@
 package fiit.oop.Controllers;
 
 import fiit.oop.Core.ModelApp;
+import fiit.oop.Core.Order;
 import fiit.oop.GUI.LogInScene;
 import fiit.oop.GUI.ManagerScene;
+import fiit.oop.GUI.ShowOrderScene;
 import fiit.oop.GUI.TailorScene;
+import fiit.oop.People.Tailor;
+import fiit.oop.People.Worker;
 import javafx.stage.Stage;
 
 public class TailorController {
 
     private TailorScene tailorScene;
     private ModelApp modelApp;
+    private ShowOrderScene showOrderScene;
+    private Tailor tailor;
+    private Order order;
+
     public TailorController(TailorScene tailorScene, ModelApp modelApp) {
+
         this.tailorScene = tailorScene;
         this.modelApp = modelApp;
 
         tailorScene.getWindow().show();
+
+        tailorScene.getShowOrdersButton().setOnAction(e -> {
+            System.out.println("Zobrazenie objednávok");
+            showOrderScene = new ShowOrderScene(new Stage(), modelApp);
+        });
+
+        if(modelApp.getTailor() != null){
+
+            tailor = modelApp.getTailor();
+
+            tailorScene.getPrepareTheClothButton().setOnAction(e -> {
+                hookOrder();
+                tailor.prepareTheCloth(order);
+            });
+
+            tailorScene.getMakeRoughVersionButton().setOnAction(e -> {
+                hookOrder();
+                tailor.makeRoughVersion(order);
+            });
+
+            tailorScene.getEarsTopSuitButton().setOnAction(e -> {
+                hookOrder();
+                tailor.earsTopSuit(order);
+            });
+
+            tailorScene.getEarsBottomSuitButton().setOnAction(e -> {
+                hookOrder();
+                tailor.earsBottomSuit(order);
+            });
+
+            tailorScene.getFinalizeSuitButton().setOnAction(e -> {
+                hookOrder();
+                tailor.finalizeSuit(order);
+            });
+        }
 
         tailorScene.getLogoutButton().setOnAction(e -> {
             reLog();
@@ -23,14 +67,16 @@ public class TailorController {
     }
 
     private void reLog(){
-        System.out.println("Odhlás managera");
 
-        tailorScene.getWindow().close();
+        this.tailorScene.getWindow().close();
 
-        Stage primaryStage = new Stage();
-        LogInScene logInScene = new LogInScene(primaryStage);
+        LogInScene logInScene = new LogInScene(new Stage());
         LogInController logInController = new LogInController(logInScene, modelApp);
-        primaryStage = logInScene.getWindow();
-        primaryStage.show();
+    }
+
+    private void hookOrder(){
+        int orderNumber = Integer.valueOf(tailorScene.getIncludeOrderNumberInput().getText());
+        this.order = modelApp.findOrder(orderNumber);
+        System.out.println("Objednávka bola nastavená");
     }
 }

@@ -1,13 +1,14 @@
 package fiit.oop.People;
 
 import fiit.oop.Core.Order;
+import fiit.oop.Storage.Cloth;
 import fiit.oop.Storage.Storage;
 
 import java.util.ArrayList;
 
 public class Tailor extends Worker{
 
-    Storage storage;
+    private Storage storage;
 
     public Tailor(String name, String surname, int id, String pass, ArrayList<Order> orders, Storage storage) {
         super(name, surname, id, pass, orders);
@@ -17,11 +18,12 @@ public class Tailor extends Worker{
 
     public void prepareTheCloth(Order suit){
 
-        if(suit.getCondition() == 0){
-            storage.getCloth().setQuantity(storage.getCloth().getQuantity() - 200);
+        if(suit.getCondition() == 0 && checkDesign(suit)){
+            Cloth temp = storage.getCloth();
+            int tempInt = temp.getQuantity() - 200;
+            storage.getCloth().setQuantity(tempInt);
             suit.setCondition(suit.getCondition()+1);
         }
-
     }
 
     public void makeRoughVersion(Order suit){
@@ -57,6 +59,16 @@ public class Tailor extends Worker{
             storage.getCloth().setQuantity(storage.getCloth().getQuantity() - 20);
             storage.getButtons().setQuantity(storage.getButtons().getQuantity() - 2);
             suit.setCondition(suit.getCondition()+1);
+        }
+    }
+
+    private boolean checkDesign(Order suit){
+
+        if(suit.isDesign())
+            return true;
+        else{
+            System.out.println("Objednávka nieje nadizajnovaná a nieje možné ju realizovať");
+            return false;
         }
     }
 
