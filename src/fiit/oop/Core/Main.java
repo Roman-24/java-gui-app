@@ -18,7 +18,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public void start(Stage primaryStage) throws IOException, ClassNotFoundException {
+    public void start(Stage primaryStage) {
 
         File file = new File("modelAppData.txt");
 
@@ -32,13 +32,14 @@ public class Main extends Application {
             // deserializácia
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            modelApp = (ModelApp)ois.readObject(); // down-casting object
+            modelApp = (ModelApp) ois.readObject(); // down-casting object
             ois.close();
-        } catch (ClassNotFoundException classNotFoundException) {
-            classNotFoundException.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
+
 
 
         LogInScene logInScene = new LogInScene(primaryStage);

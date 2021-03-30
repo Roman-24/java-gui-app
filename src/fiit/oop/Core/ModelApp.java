@@ -81,8 +81,8 @@ public class ModelApp implements Serializable {
             }
             return false;
 
-        } catch (NumberFormatException e) {
-            System.out.println("Zadali ID v nesprávnom formáte");
+        } catch (NumberFormat_MyException e) {
+            System.out.println(e);
             return false;
         }
     }
