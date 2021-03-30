@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 public class CreateOrderScene {
 
     private Stage window;
+    private Scene scene;
     private GridPane grid = new GridPane();
 
     // labels
@@ -28,12 +29,10 @@ public class CreateOrderScene {
     private TextField clothMaterialInput = new TextField();
 
     private Button createButton = new Button("Vytvoriť objednávku");
-    private Scene scene = new Scene(grid, 300, 200);
-    private ModelApp modelApp;
 
     public CreateOrderScene(Stage primaryStage, ModelApp modelApp) {
-        this.modelApp = modelApp;
-        this.window = primaryStage;
+
+        window = primaryStage;
 
         GridPane.setConstraints(customerID, 0, 0);
         GridPane.setConstraints(size, 0, 1);
@@ -47,8 +46,10 @@ public class CreateOrderScene {
 
         GridPane.setConstraints(createButton, 1, 4);
 
-        grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial);
-        grid.getChildren().addAll(customerIDInput, sizeInput, typeOfSuitInput, clothMaterialInput, createButton);
+        grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial,
+                customerIDInput, sizeInput, typeOfSuitInput, clothMaterialInput, createButton);
+
+        scene = new Scene(grid, 300, 200);
 
         window.setScene(scene);
         window.show();
@@ -150,11 +151,4 @@ public class CreateOrderScene {
         this.scene = scene;
     }
 
-    public ModelApp getModelApp() {
-        return modelApp;
-    }
-
-    public void setModelApp(ModelApp modelApp) {
-        this.modelApp = modelApp;
-    }
 }

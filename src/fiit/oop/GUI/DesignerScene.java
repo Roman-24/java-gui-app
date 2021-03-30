@@ -11,8 +11,8 @@ import javafx.stage.Stage;
 public class DesignerScene {
 
     private Stage window = new Stage();
+    private Scene scene;
     private VBox vbox = new VBox();
-    private Button showOrdersButton = new Button("Zobraziť objednávky");
 
     private Label includeYourDesign = new Label("Vložte dizajn: ");
     private TextField includeYourDesignInput = new TextField();
@@ -20,15 +20,19 @@ public class DesignerScene {
     private Label includeOrderNumber = new Label("Zadajte číslo objednávky");
     private TextField includeOrderNumberInput = new TextField();
 
+    private Button showOrdersButton = new Button("Zobraziť objednávky");
     private Button setDesignButton = new Button("Odoslať dizajn");
     private Button logoutButton = new Button("Odhlasiť");
-    private Scene scene = new Scene(vbox, 400,400);
 
     public DesignerScene(){
+
         window.setTitle("Ste prihlásený ako Designer");
 
         vbox.setPadding(new Insets(10, 10, 10, 10));
-        vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput, includeYourDesign, includeYourDesignInput, setDesignButton, logoutButton);
+        vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput,
+                includeYourDesign, includeYourDesignInput, setDesignButton, logoutButton);
+
+        scene = new Scene(vbox, 400,400);
 
         window.setScene(scene);
     }
@@ -41,20 +45,20 @@ public class DesignerScene {
         this.window = window;
     }
 
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
     public VBox getVbox() {
         return vbox;
     }
 
     public void setVbox(VBox vbox) {
         this.vbox = vbox;
-    }
-
-    public Button getShowOrdersButton() {
-        return showOrdersButton;
-    }
-
-    public void setShowOrdersButton(Button showOrdersButton) {
-        this.showOrdersButton = showOrdersButton;
     }
 
     public Label getIncludeYourDesign() {
@@ -89,20 +93,20 @@ public class DesignerScene {
         this.includeOrderNumberInput = includeOrderNumberInput;
     }
 
+    public Button getShowOrdersButton() {
+        return showOrdersButton;
+    }
+
+    public void setShowOrdersButton(Button showOrdersButton) {
+        this.showOrdersButton = showOrdersButton;
+    }
+
     public Button getSetDesignButton() {
         return setDesignButton;
     }
 
     public void setSetDesignButton(Button setDesignButton) {
         this.setDesignButton = setDesignButton;
-    }
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
     }
 
     public Button getLogoutButton() {

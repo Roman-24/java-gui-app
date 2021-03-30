@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class TailorScene {
 
     private Stage window = new Stage();
+    private Scene scene;
     private VBox vbox = new VBox();
     private Button showOrdersButton = new Button("Zobraziť objednávky");
 
@@ -18,7 +19,6 @@ public class TailorScene {
     private TextField includeOrderNumberInput = new TextField();
 
     private Button logoutButton = new Button("Odhlasiť");
-    private Scene scene = new Scene(vbox, 400,400);
 
     private Button prepareTheClothButton = new Button("Nachystať látku");
     private Button makeRoughVersionButton = new Button("Pripraviť hrubú verziu");
@@ -34,6 +34,8 @@ public class TailorScene {
         vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput,
                 prepareTheClothButton, makeRoughVersionButton, earsTopSuitButton, earsBottomSuitButton, finalizeSuitButton,
                 logoutButton);
+
+        scene = new Scene(vbox, 400,400);
 
         window.setScene(scene);
     }

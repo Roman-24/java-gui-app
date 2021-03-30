@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class LogInScene {
 
     private Stage window;
+    private Scene scene;
     private GridPane grid = new GridPane();
     // name label
     private Label userNameLabel = new Label("ID používateľa: ");
@@ -22,11 +23,10 @@ public class LogInScene {
     private TextField passInput = new TextField();
     // login button
     private Button loginButton = new Button("Prihlásiť sa");
-    private Scene scene;
 
     public LogInScene(Stage primaryStage) {
 
-        window = primaryStage;
+        this.window = primaryStage;
         window.setTitle("Prihlásenie");
 
         grid.setPadding(new Insets(10, 10, 10, 10));
@@ -59,6 +59,14 @@ public class LogInScene {
 
     public void setWindow(Stage window) {
         this.window = window;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     public GridPane getGrid() {
@@ -107,13 +115,5 @@ public class LogInScene {
 
     public void setLoginButton(Button loginButton) {
         this.loginButton = loginButton;
-    }
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
     }
 }

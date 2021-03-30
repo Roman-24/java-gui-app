@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 public class ShowOrderScene {
 
     private Stage window;
+    private Scene scene;
     private GridPane vbox = new GridPane();
-    private Scene scene = new Scene(vbox, 400, 600);
 
     public ShowOrderScene(Stage primaryStage, ModelApp modelApp) {
 
@@ -49,6 +49,7 @@ public class ShowOrderScene {
             vbox.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, condition, enter);
         }
 
+        scene = new Scene(vbox, 400, 600);
         window.setScene(scene);
         window.show();
     }

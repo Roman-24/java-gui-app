@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 public class ManagerScene {
 
     private Stage window = new Stage();
+    private Scene scene;
     private GridPane grid = new GridPane();
     // Názov položky v menu
     private Menu ordersMenu = new Menu("Objednávky");
@@ -18,7 +19,6 @@ public class ManagerScene {
     private MenuBar menuBar = new MenuBar();
     private BorderPane layout = new BorderPane();
     private Button logoutButton = new Button("Odhlasiť");
-    private Scene scene = new Scene(layout, 400,400);
 
     public ManagerScene(){
 
@@ -38,6 +38,8 @@ public class ManagerScene {
         layout.setTop(menuBar);
         layout.setRight(logoutButton);
 
+        scene = new Scene(layout, 400,400);
+
         window.setScene(scene);
 
     }
@@ -48,6 +50,14 @@ public class ManagerScene {
 
     public void setWindow(Stage window) {
         this.window = window;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     public GridPane getGrid() {
@@ -88,13 +98,5 @@ public class ManagerScene {
 
     public void setLogoutButton(Button logoutButton) {
         this.logoutButton = logoutButton;
-    }
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
     }
 }
