@@ -1,6 +1,8 @@
 package fiit.oop.Storage;
 
-abstract class Item {
+import java.io.Serializable;
+
+abstract class Item implements Serializable {
 
     protected String itemName;
     protected int quantity;

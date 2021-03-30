@@ -2,9 +2,10 @@ package fiit.oop.People;
 
 import fiit.oop.Core.Order;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class Worker extends Person {
+public abstract class Worker extends Person implements Serializable {
 
     private int id;
     private String position;

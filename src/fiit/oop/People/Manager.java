@@ -2,9 +2,10 @@ package fiit.oop.People;
 
 import fiit.oop.Core.Order;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Manager extends Worker {
+public class Manager extends Worker implements Serializable {
 
     public Manager(String name, String surname, int id, String pass, ArrayList<Order> orders) {
         super(name, surname, id, pass, orders);

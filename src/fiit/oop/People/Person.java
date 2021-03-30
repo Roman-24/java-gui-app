@@ -1,6 +1,8 @@
 package fiit.oop.People;
 
-abstract class Person {
+import java.io.Serializable;
+
+abstract class Person implements Serializable {
 
     public String name;
     public String surname;

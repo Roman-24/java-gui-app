@@ -1,6 +1,8 @@
 package fiit.oop.Storage;
 
-public class Storage {
+import java.io.Serializable;
+
+public class Storage implements Serializable {
 
     private Cloth cloth;
     private Buttons buttons;

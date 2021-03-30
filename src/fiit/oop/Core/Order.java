@@ -2,7 +2,9 @@ package fiit.oop.Core;
 
 import fiit.oop.Storage.Cloth;
 
-public class Order {
+import java.io.Serializable;
+
+public class Order implements Serializable {
 
     private int customerID;
     private int size;

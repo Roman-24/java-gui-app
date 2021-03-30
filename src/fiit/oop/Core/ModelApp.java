@@ -9,9 +9,13 @@ import fiit.oop.GUI.TailorScene;
 import fiit.oop.People.*;
 import fiit.oop.Storage.Storage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ModelApp {
+public class ModelApp implements Serializable {
+
+    // serializácia
+
 
     public ArrayList<Worker> workers;
     public ArrayList<Order> orders;

@@ -41,6 +41,7 @@ public class ShowOrderScene {
             GridPane.setConstraints(typeOfSuit, 0, row++);
             GridPane.setConstraints(clothMaterial, 0, row++);
             GridPane.setConstraints(design, 0, row++);
+            GridPane.setConstraints(designDescription, 0, row++);
             GridPane.setConstraints(condition, 0, row++);
             GridPane.setConstraints(enter, 0, row++);
 

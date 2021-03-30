@@ -4,9 +4,10 @@ import fiit.oop.Core.Order;
 import fiit.oop.Storage.Cloth;
 import fiit.oop.Storage.Storage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Tailor extends Worker{
+public class Tailor extends Worker implements Serializable  {
 
     private Storage storage;
 

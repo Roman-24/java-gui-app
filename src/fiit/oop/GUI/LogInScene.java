@@ -19,6 +19,7 @@ public class LogInScene {
     private Label passLabel = new Label("Heslo: ");
     private TextField passInput = new PasswordField();
     private Button loginButton = new Button("Prihlásiť sa");
+    private Button exitButton = new Button("Ukončiť program");
 
     public LogInScene(Stage primaryStage) {
 
@@ -38,8 +39,9 @@ public class LogInScene {
         GridPane.setConstraints(passInput, 1, 1);
 
         GridPane.setConstraints(loginButton, 1, 2);
+        GridPane.setConstraints(exitButton, 1, 3);
 
-        grid.getChildren().addAll(userNameLabel, nameInput, passLabel, passInput, loginButton);
+        grid.getChildren().addAll(userNameLabel, nameInput, passLabel, passInput, loginButton, exitButton);
 
         scene = new Scene(grid, 400, 400);
 
@@ -111,5 +113,13 @@ public class LogInScene {
 
     public void setLoginButton(Button loginButton) {
         this.loginButton = loginButton;
+    }
+
+    public Button getExitButton() {
+        return exitButton;
+    }
+
+    public void setExitButton(Button exitButton) {
+        this.exitButton = exitButton;
     }
 }

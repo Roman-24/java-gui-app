@@ -1,6 +1,8 @@
 package fiit.oop.Storage;
 
-public class Buttons extends Item{
+import java.io.Serializable;
+
+public class Buttons extends Item implements Serializable {
 
     public Buttons(int initialQuantity) {
         super("buttons", initialQuantity);

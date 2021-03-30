@@ -1,6 +1,8 @@
 package fiit.oop.Storage;
 
-public class Cloth extends Item {
+import java.io.Serializable;
+
+public class Cloth extends Item implements Serializable {
 
     // String type;
 
