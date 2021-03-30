@@ -5,7 +5,6 @@ public class Storage {
     private Cloth cloth;
     private Buttons buttons;
 
-
     public Storage(){
         cloth = new Cloth(999999);
         buttons = new Buttons(9999);

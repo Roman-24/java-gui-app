@@ -9,6 +9,7 @@ public class LogInController {
     private ModelApp modelApp;
 
     public LogInController(LogInScene logInScene, ModelApp modelApp) {
+
         this.logInScene = logInScene;
         this.modelApp = modelApp;
 

@@ -13,6 +13,7 @@ public class ManagerController {
     private ModelApp modelApp;
 
     public ManagerController(ManagerScene managerScene, ModelApp modelApp) {
+
         this.managerScene = managerScene;
         this.modelApp = modelApp;
 
@@ -35,6 +36,7 @@ public class ManagerController {
     }
 
     private void createNewOrder(){
+
         CreateOrderScene createOrderScene = new CreateOrderScene(new Stage(), modelApp);
 
         createOrderScene.getCreateButton().setOnAction(e -> {
@@ -48,7 +50,6 @@ public class ManagerController {
 
             System.out.println("createNewOrder bolo uskutočnené");
             createOrderScene.getWindow().close();
-
         });
     }
 

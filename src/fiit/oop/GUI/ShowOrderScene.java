@@ -27,12 +27,12 @@ public class ShowOrderScene {
         int row = 0;
         for(Order order : modelApp.orders){
 
-            // labels
             Label customerID = new Label("CustomerID: " + order.getCustomerID());
             Label size = new Label("Veľkosť obleku je " + order.getSize());
             Label typeOfSuit = new Label("Typ obleku je: " + order.getTypeOfSuit());
             Label clothMaterial = new Label("Použítý materiál: " + order.getClothMaterial());
             Label design = new Label("Dizajn obleku: " + order.isDesign());
+            Label designDescription = new Label("Dizaj je: " + order.getDesignDescription());
             Label condition = new Label("Práce na objednávke sú vo fáze " + order.getCondition());
             Label enter = new Label(" ");
             
@@ -46,7 +46,7 @@ public class ShowOrderScene {
 
             row++;
 
-            vbox.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, condition, enter);
+            vbox.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, designDescription, condition, enter);
         }
 
         scene = new Scene(vbox, 400, 600);

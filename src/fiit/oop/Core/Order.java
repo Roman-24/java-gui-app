@@ -13,6 +13,7 @@ public class Order {
     private int condition; // stav objednávky
 
     public Order(int customerID, int size, String typeOfSuit, String clothMaterial){
+
         this.customerID = customerID;
         this.size = size;
         this.typeOfSuit = typeOfSuit;

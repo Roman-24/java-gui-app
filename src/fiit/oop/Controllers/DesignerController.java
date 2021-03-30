@@ -13,15 +13,16 @@ import javafx.stage.Stage;
 
 public class DesignerController {
 
-    Stage window = new Stage();
-    GridPane grid = new GridPane();
-    BorderPane layout = new BorderPane();
-    Scene scene = new Scene(layout, 400,400);
-
+    private Stage window = new Stage();
+    private GridPane grid = new GridPane();
+    private BorderPane layout = new BorderPane();
+    private Scene scene = new Scene(layout, 400,400);
     private DesignerScene designerScene;
     private ModelApp modelApp;
     private ShowOrderScene showOrderScene;
+
     public DesignerController(DesignerScene designerScene, ModelApp modelApp) {
+
         this.designerScene = designerScene;
         this.modelApp = modelApp;
 

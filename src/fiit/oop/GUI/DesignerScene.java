@@ -13,13 +13,10 @@ public class DesignerScene {
     private Stage window = new Stage();
     private Scene scene;
     private VBox vbox = new VBox();
-
     private Label includeYourDesign = new Label("Vložte dizajn: ");
     private TextField includeYourDesignInput = new TextField();
-
     private Label includeOrderNumber = new Label("Zadajte číslo objednávky");
     private TextField includeOrderNumberInput = new TextField();
-
     private Button showOrdersButton = new Button("Zobraziť objednávky");
     private Button setDesignButton = new Button("Odoslať dizajn");
     private Button logoutButton = new Button("Odhlasiť");

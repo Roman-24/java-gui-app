@@ -13,9 +13,7 @@ public class ManagerScene {
     private Stage window = new Stage();
     private Scene scene;
     private GridPane grid = new GridPane();
-    // Názov položky v menu
     private Menu ordersMenu = new Menu("Objednávky");
-    // Main menu bar
     private MenuBar menuBar = new MenuBar();
     private BorderPane layout = new BorderPane();
     private Button logoutButton = new Button("Odhlasiť");

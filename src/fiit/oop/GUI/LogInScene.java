@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -13,15 +14,10 @@ public class LogInScene {
     private Stage window;
     private Scene scene;
     private GridPane grid = new GridPane();
-    // name label
     private Label userNameLabel = new Label("ID používateľa: ");
-    // name inputs
     private TextField nameInput = new TextField();
-    // password label
     private Label passLabel = new Label("Heslo: ");
-    // password input
-    private TextField passInput = new TextField();
-    // login button
+    private TextField passInput = new PasswordField();
     private Button loginButton = new Button("Prihlásiť sa");
 
     public LogInScene(Stage primaryStage) {

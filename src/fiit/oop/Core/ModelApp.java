@@ -19,6 +19,7 @@ public class ModelApp {
     public Storage storage = new Storage();
 
     public ModelApp(){
+
         this.workers = staffInitialization();
         this.orders = new ArrayList<>();
     }
@@ -100,7 +101,6 @@ public class ModelApp {
     }
 
     public Tailor getTailor(){
-
         for(Worker i : workers)
             if(i instanceof Tailor)
                 return (Tailor)i;

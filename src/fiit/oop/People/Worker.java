@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public abstract class Worker extends Person {
 
     private int id;
-
     private String position;
     private String pass;
     private String email;
