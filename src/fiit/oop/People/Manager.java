@@ -23,4 +23,11 @@ public class Manager extends Worker implements Serializable {
     public void checkTheQuality(){
 
     }
+
+    @Override
+    public void work() {
+        super.work();
+        System.out.println("Manager pracuje 24/7");
+
+    }
 }
