@@ -33,11 +33,19 @@ public class ModelApp implements ModelInterface, Serializable {
 
     public void findOrderAndSetDesign(int orderID, String design){
 
-        for (Order order : orders)
+        // pôvodný loop bez lambda výrazu
+        /*for (Order order : orders)
+            if(orderID == order.getCustomerID()){
+                order.setDesignDescription(design);
+                order.setDesign(true);
+            }*/
+
+        orders.forEach((order -> { // Lambda výraz
             if(orderID == order.getCustomerID()){
                 order.setDesignDescription(design);
                 order.setDesign(true);
             }
+        }));
     }
 
     @Override
