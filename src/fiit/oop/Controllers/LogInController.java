@@ -48,7 +48,7 @@ public class LogInController {
     }
 
     private void serializable() throws ClassNotFoundException, IOException {
-        FileOutputStream fos = new FileOutputStream("modelAppData.txt");
+        FileOutputStream fos = new FileOutputStream("modelAppData.out");
         ObjectOutputStream oos  = new ObjectOutputStream(fos);
         oos.writeObject(modelApp);
         oos.close();

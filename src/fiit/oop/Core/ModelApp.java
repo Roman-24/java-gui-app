@@ -13,8 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelApp implements Serializable {
-
+public class ModelApp implements ModelInterface, Serializable {
 
     public List<Worker> workers;
     public ArrayList<Order> orders;
@@ -41,6 +40,7 @@ public class ModelApp implements Serializable {
             }
     }
 
+    @Override
     public Order findOrder(int orderID){
 
         for (Order order : orders)

@@ -20,7 +20,7 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) {
 
-        File file = new File("modelAppData.txt");
+        File file = new File("modelAppData.out");
 
         try {
             // deserializácia
