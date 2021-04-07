@@ -27,4 +27,29 @@ public class Storage implements Serializable {
     public void setButtons(Buttons buttons) {
         this.buttons = buttons;
     }
+
+
+
+    public class Buttons extends Item implements Serializable {
+
+        public Buttons(int initialQuantity) {
+            super("buttons", initialQuantity);
+            this.setQuantity(9999);
+        }
+    }
+
+    public class Cloth extends Item implements Serializable {
+
+        // String type;
+
+        public Cloth(int initialQuantity) {
+            super("cloth", initialQuantity);
+            this.setQuantity(999999);
+        }
+
+        public Cloth(String itemName, int initialQuantity) {
+            super(itemName, initialQuantity);
+        }
+
+    }
 }

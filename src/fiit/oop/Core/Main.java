@@ -22,24 +22,15 @@ public class Main extends Application {
 
         File file = new File("modelAppData.txt");
 
-        // serializácia
-        /*FileOutputStream fos = new FileOutputStream(file);
-        ObjectOutputStream oos  = new ObjectOutputStream(fos);
-        oos.writeObject(modelApp);
-        oos.close();*/
-
         try {
             // deserializácia
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             modelApp = (ModelApp) ois.readObject(); // down-casting object
             ois.close();
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
         }
-
 
 
         LogInScene logInScene = new LogInScene(primaryStage);

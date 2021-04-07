@@ -1,7 +1,6 @@
 package fiit.oop.People;
 
 import fiit.oop.Core.Order;
-import fiit.oop.Storage.Cloth;
 import fiit.oop.Storage.Storage;
 
 import java.io.Serializable;
@@ -20,7 +19,7 @@ public class Tailor extends Worker implements Serializable  {
     public void prepareTheCloth(Order suit){
 
         if(suit.getCondition() == 0 && checkDesign(suit)){
-            Cloth temp = storage.getCloth();
+            Storage.Cloth temp = storage.getCloth();
             int tempInt = temp.getQuantity() - 200;
             storage.getCloth().setQuantity(tempInt);
             suit.setCondition(suit.getCondition()+1);

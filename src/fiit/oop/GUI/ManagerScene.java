@@ -1,6 +1,5 @@
 package fiit.oop.GUI;
 
-import fiit.oop.Storage.Buttons;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;

@@ -11,13 +11,12 @@ import fiit.oop.Storage.Storage;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ModelApp implements Serializable {
 
-    // serializácia
 
-
-    public ArrayList<Worker> workers;
+    public List<Worker> workers;
     public ArrayList<Order> orders;
     public Worker actualUser;
     public Storage storage = new Storage();
@@ -52,9 +51,9 @@ public class ModelApp implements Serializable {
         return null;
     }
 
-    public ArrayList<Worker> staffInitialization() {
+    public List<Worker> staffInitialization() {
 
-        ArrayList<Worker> workers = new ArrayList<>();
+        List<Worker> workers = new ArrayList<Worker>(); // Generickosť
 
         workers.add(new Manager("Romanko", "TheManager", 420, "0000", orders));
         workers.add(new Designer("Kristobal", "Balenciaga", 421, "0000", orders));
@@ -87,7 +86,7 @@ public class ModelApp implements Serializable {
         }
     }
 
-    public void logUser(){
+    public void logUser(){ // RTTI
 
         if(this.actualUser instanceof Manager){
             ManagerScene managerScene = new ManagerScene();

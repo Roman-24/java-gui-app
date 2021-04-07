@@ -1,7 +1,5 @@
 package fiit.oop.Core;
 
-import fiit.oop.Storage.Cloth;
-
 import java.io.Serializable;
 
 public class Order implements Serializable {
