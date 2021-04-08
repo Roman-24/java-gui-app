@@ -63,7 +63,7 @@ public class ModelApp implements ModelInterface, Serializable {
 
         List<Worker> workers = new ArrayList<Worker>(); // Generickosť
 
-        workers.add(new Manager("Romanko", "TheManager", 420, "0000", orders));
+        workers.add(new Manager("Romanko", "TheManager", 420, "0000", this, orders));
         workers.add(new Designer("Kristobal", "Balenciaga", 421, "0000", orders));
         workers.add(new Tailor("Anna", "Green", 430, "0000", orders, storage));
 
@@ -115,6 +115,13 @@ public class ModelApp implements ModelInterface, Serializable {
         for(Worker i : workers)
             if(i instanceof Tailor)
                 return (Tailor)i;
+        return null;
+    }
+
+    public Manager getManager(){
+        for(Worker i : workers)
+            if(i instanceof Manager)
+                return (Manager)i;
         return null;
     }
 

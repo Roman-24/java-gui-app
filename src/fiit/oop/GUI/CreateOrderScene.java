@@ -2,6 +2,7 @@ package fiit.oop.GUI;
 
 import fiit.oop.Core.ModelApp;
 import javafx.geometry.HPos;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -33,6 +34,10 @@ public class CreateOrderScene {
     public CreateOrderScene(Stage primaryStage, ModelApp modelApp) {
 
         window = primaryStage;
+
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(10);
+        grid.setHgap(10);
 
         GridPane.setConstraints(customerID, 0, 0);
         GridPane.setConstraints(size, 0, 1);

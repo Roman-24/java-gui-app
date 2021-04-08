@@ -33,6 +33,10 @@ public class ManagerController {
         managerScene.getLogoutButton().setOnAction(e -> {
             reLog();
         });
+
+        managerScene.getCheckOrdersButton().setOnAction(e -> {
+            modelApp.getManager().work();
+        });
     }
 
     private void createNewOrder(){
@@ -41,8 +45,8 @@ public class ManagerController {
 
         createOrderScene.getCreateButton().setOnAction(e -> {
 
-            int customerID = Integer.valueOf(createOrderScene.getCustomerIDInput().getText());
-            int size = Integer.valueOf(createOrderScene.getSizeInput().getText());
+            int customerID = Integer.parseInt(createOrderScene.getCustomerIDInput().getText());
+            int size = Integer.parseInt(createOrderScene.getSizeInput().getText());
             String typeOfSuit = createOrderScene.getTypeOfSuitInput().getText();
             String clothMaterial = createOrderScene.getClothMaterialInput().getText();
 

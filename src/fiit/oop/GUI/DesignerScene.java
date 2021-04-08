@@ -12,7 +12,7 @@ public class DesignerScene {
 
     private Stage window = new Stage();
     private Scene scene;
-    private VBox vbox = new VBox();
+    private VBox vbox = new VBox(10);
     private Label includeYourDesign = new Label("Vložte dizajn: ");
     private TextField includeYourDesignInput = new TextField();
     private Label includeOrderNumber = new Label("Zadajte číslo objednávky");

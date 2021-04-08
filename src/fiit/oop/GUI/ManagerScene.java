@@ -15,6 +15,7 @@ public class ManagerScene {
     private Menu ordersMenu = new Menu("Objednávky");
     private MenuBar menuBar = new MenuBar();
     private BorderPane layout = new BorderPane();
+    private Button checkOrdersButton = new Button("Skontroluj počet objednávok");
     private Button logoutButton = new Button("Odhlasiť");
 
     public ManagerScene(){
@@ -22,7 +23,7 @@ public class ManagerScene {
         window.setTitle("Ste prihlásený ako Manager");
 
         grid.setPadding(new Insets(10, 10, 10, 10));
-        grid.setVgap(8);
+        grid.setVgap(10);
         grid.setHgap(10);
 
         // Menu items
@@ -33,6 +34,7 @@ public class ManagerScene {
         menuBar.getMenus().addAll(ordersMenu);
 
         layout.setTop(menuBar);
+        layout.setLeft(checkOrdersButton);
         layout.setRight(logoutButton);
 
         scene = new Scene(layout, 400,400);
@@ -87,6 +89,14 @@ public class ManagerScene {
 
     public void setLayout(BorderPane layout) {
         this.layout = layout;
+    }
+
+    public Button getCheckOrdersButton() {
+        return checkOrdersButton;
+    }
+
+    public void setCheckOrdersButton(Button checkOrdersButton) {
+        this.checkOrdersButton = checkOrdersButton;
     }
 
     public Button getLogoutButton() {

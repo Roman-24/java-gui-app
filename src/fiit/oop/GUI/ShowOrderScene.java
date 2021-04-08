@@ -15,14 +15,16 @@ public class ShowOrderScene {
 
     private Stage window;
     private Scene scene;
-    private GridPane vbox = new GridPane();
+    private GridPane grid = new GridPane();
 
     public ShowOrderScene(Stage primaryStage, ModelApp modelApp) {
 
         window = primaryStage;
         window.setTitle("Aktuálne objednávky");
 
-        vbox.setPadding(new Insets(20, 20, 20, 20));
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(10);
+        grid.setHgap(10);
 
         int row = 0;
         for(Order order : modelApp.orders){
@@ -47,10 +49,10 @@ public class ShowOrderScene {
 
             row++;
 
-            vbox.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, designDescription, condition, enter);
+            grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, designDescription, condition, enter);
         }
 
-        scene = new Scene(vbox, 400, 600);
+        scene = new Scene(grid, 400, 600);
         window.setScene(scene);
         window.show();
     }
@@ -63,19 +65,19 @@ public class ShowOrderScene {
         this.window = window;
     }
 
-    public GridPane getVbox() {
-        return vbox;
-    }
-
-    public void setVbox(GridPane vbox) {
-        this.vbox = vbox;
-    }
-
     public Scene getScene() {
         return scene;
     }
 
     public void setScene(Scene scene) {
         this.scene = scene;
+    }
+
+    public GridPane getGrid() {
+        return grid;
+    }
+
+    public void setGrid(GridPane grid) {
+        this.grid = grid;
     }
 }
