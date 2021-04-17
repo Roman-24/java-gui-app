@@ -16,7 +16,7 @@ public class DesignerController {
     private Stage window = new Stage();
     private GridPane grid = new GridPane();
     private BorderPane layout = new BorderPane();
-    private Scene scene = new Scene(layout, 400,400);
+    private Scene scene = new Scene(layout, 400, 400);
     private DesignerScene designerScene;
     private ModelApp modelApp;
     private ShowOrderScene showOrderScene;
@@ -35,11 +35,11 @@ public class DesignerController {
         designerScene.getSetDesignButton().setOnAction(e -> {
 
             int orderNumber = Integer.parseInt(designerScene.getIncludeOrderNumberInput().getText());
-            String designDescription =  designerScene.getIncludeYourDesignInput().getText();
+            String designDescription = designerScene.getIncludeYourDesignInput().getText();
 
             modelApp.findOrderAndSetDesign(orderNumber, designDescription);
 
-            if(showOrderScene != null)
+            if (showOrderScene != null)
                 showOrderScene.getWindow().close();
 
         });
@@ -49,7 +49,7 @@ public class DesignerController {
         });
     }
 
-    private void reLog(){
+    private void reLog() {
 
         designerScene.getWindow().close();
 

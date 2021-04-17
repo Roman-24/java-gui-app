@@ -48,7 +48,7 @@ public class ManagerController {
         });
     }
 
-    private void createNewOrder(){
+    private void createNewOrder() {
 
         CreateOrderScene createOrderScene = new CreateOrderScene(new Stage(), modelApp);
 
@@ -65,7 +65,7 @@ public class ManagerController {
         });
     }
 
-    private void reLog(){
+    private void reLog() {
 
         managerScene.getWindow().close();
 

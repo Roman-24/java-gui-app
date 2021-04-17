@@ -22,7 +22,7 @@ public class ManagerScene {
     private TextField deletOrderField = new TextField();
     private Button deletOrderButton = new Button("Vymazať objednávku");
 
-    public ManagerScene(){
+    public ManagerScene() {
 
         window.setTitle("Ste prihlásený ako Manager");
 
@@ -40,11 +40,11 @@ public class ManagerScene {
 
         vBox.getChildren().addAll(checkOrdersButton, ordersLabel, logoutButton);
         vBox.getChildren().addAll(deletOrderLabel, deletOrderField, deletOrderButton);
-        vBox.setPadding(new Insets(50,50,50,50));
+        vBox.setPadding(new Insets(50, 50, 50, 50));
 
         layout.setCenter(vBox);
 
-        scene = new Scene(layout, 400,400);
+        scene = new Scene(layout, 400, 400);
 
         window.setScene(scene);
     }

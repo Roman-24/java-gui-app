@@ -29,7 +29,7 @@ public class TailorController {
             showOrderScene = new ShowOrderScene(new Stage(), modelApp);
         });
 
-        if(modelApp.getTailor() != null){
+        if (modelApp.getTailor() != null) {
 
             tailor = modelApp.getTailor();
 
@@ -65,7 +65,7 @@ public class TailorController {
 
     }
 
-    private void reLog(){
+    private void reLog() {
 
         this.tailorScene.getWindow().close();
 
@@ -73,7 +73,7 @@ public class TailorController {
         LogInController logInController = new LogInController(logInScene, modelApp);
     }
 
-    private void hookOrder(){
+    private void hookOrder() {
         int orderNumber = Integer.parseInt(tailorScene.getIncludeOrderNumberInput().getText());
         this.order = modelApp.findOrder(orderNumber);
         System.out.println("Objednávka bola nastavená");

@@ -23,7 +23,7 @@ public class TailorScene {
     private Button earsBottomSuitButton = new Button("Ušiť spodnú časť");
     private Button finalizeSuitButton = new Button("Dokončiť oblek");
 
-    public TailorScene(){
+    public TailorScene() {
 
         window.setTitle("Ste prihlásený ako Tailor");
 
@@ -32,7 +32,7 @@ public class TailorScene {
                 prepareTheClothButton, makeRoughVersionButton, earsTopSuitButton, earsBottomSuitButton, finalizeSuitButton,
                 logoutButton);
 
-        scene = new Scene(vbox, 400,400);
+        scene = new Scene(vbox, 400, 400);
 
         window.setScene(scene);
     }

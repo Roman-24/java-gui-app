@@ -12,7 +12,7 @@ public class Main extends Application {
 
     ModelApp modelApp = new ModelApp();
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
         System.out.println("Staring OOP project..");
         launch(args);
@@ -31,12 +31,9 @@ public class Main extends Application {
         }
 
 
-        LogInScene logInScene = new LogInScene(primaryStage);
-        new LogInController(logInScene, modelApp);
+        new LogInController(new LogInScene(primaryStage), modelApp);
 
     }
-
-
 
 
 }

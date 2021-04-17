@@ -12,7 +12,7 @@ public class Order implements Serializable {
     private String designDescription;
     private int condition; // stav objednávky
 
-    public Order(int customerID, int size, String typeOfSuit, String clothMaterial){
+    public Order(int customerID, int size, String typeOfSuit, String clothMaterial) {
 
         this.customerID = customerID;
         this.size = size;

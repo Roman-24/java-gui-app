@@ -20,18 +20,18 @@ public class ModelApp implements ModelInterface, Serializable {
     public Worker actualUser;
     public Storage storage = new Storage();
 
-    public ModelApp(){
+    public ModelApp() {
 
         this.workers = staffInitialization();
         this.orders = new ArrayList<>();
     }
 
-    public void addOrder(int customerID, int size, String typeOfSuit, String clothMaterial){
+    public void addOrder(int customerID, int size, String typeOfSuit, String clothMaterial) {
         Order newOrder = new Order(customerID, size, typeOfSuit, clothMaterial);
         this.orders.add(newOrder);
     }
 
-    public void findOrderAndSetDesign(int orderID, String design){
+    public void findOrderAndSetDesign(int orderID, String design) {
 
         // pôvodný loop bez lambda výrazu
         /*for (Order order : orders)
@@ -41,7 +41,7 @@ public class ModelApp implements ModelInterface, Serializable {
             }*/
 
         orders.forEach((order -> { // Lambda výraz
-            if(orderID == order.getCustomerID()){
+            if (orderID == order.getCustomerID()) {
                 order.setDesignDescription(design);
                 order.setDesign(true);
             }
@@ -49,10 +49,10 @@ public class ModelApp implements ModelInterface, Serializable {
     }
 
     @Override
-    public Order findOrder(int orderID){
+    public Order findOrder(int orderID) {
 
         for (Order order : orders)
-            if(orderID == order.getCustomerID()){
+            if (orderID == order.getCustomerID()) {
                 System.out.println("hľadaná objednávka " + order.getCustomerID());
                 return order;
             }
@@ -94,34 +94,32 @@ public class ModelApp implements ModelInterface, Serializable {
         }
     }
 
-    public void logUser(){ // RTTI
+    public void logUser() { // RTTI
 
-        if(this.actualUser instanceof Manager){
+        if (this.actualUser instanceof Manager) {
             ManagerScene managerScene = new ManagerScene();
             ManagerController managerController = new ManagerController(managerScene, this);
-        }
-        else if(this.actualUser instanceof Designer){
+        } else if (this.actualUser instanceof Designer) {
             DesignerScene designerScene = new DesignerScene();
             DesignerController designerController = new DesignerController(designerScene, this);
 
-        }
-        else if(this.actualUser instanceof Tailor){
+        } else if (this.actualUser instanceof Tailor) {
             TailorScene tailorScene = new TailorScene();
             TailorController tailorController = new TailorController(tailorScene, this);
         }
     }
 
-    public Tailor getTailor(){
-        for(Worker i : workers)
-            if(i instanceof Tailor)
-                return (Tailor)i;
+    public Tailor getTailor() {
+        for (Worker i : workers)
+            if (i instanceof Tailor)
+                return (Tailor) i;
         return null;
     }
 
-    public Manager getManager(){
-        for(Worker i : workers)
-            if(i instanceof Manager)
-                return (Manager)i;
+    public Manager getManager() {
+        for (Worker i : workers)
+            if (i instanceof Manager)
+                return (Manager) i;
         return null;
     }
 

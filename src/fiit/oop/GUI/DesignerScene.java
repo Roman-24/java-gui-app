@@ -21,7 +21,7 @@ public class DesignerScene {
     private Button setDesignButton = new Button("Odoslať dizajn");
     private Button logoutButton = new Button("Odhlasiť");
 
-    public DesignerScene(){
+    public DesignerScene() {
 
         window.setTitle("Ste prihlásený ako Designer");
 
@@ -29,7 +29,7 @@ public class DesignerScene {
         vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput,
                 includeYourDesign, includeYourDesignInput, setDesignButton, logoutButton);
 
-        scene = new Scene(vbox, 400,400);
+        scene = new Scene(vbox, 400, 400);
 
         window.setScene(scene);
     }

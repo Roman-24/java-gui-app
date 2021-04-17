@@ -23,7 +23,7 @@ public class LogInController {
             String nameInput = logInScene.getNameInput().getText();
             String passInput = logInScene.getPassInput().getText();
 
-            if(modelApp.checkUser(nameInput, passInput)){
+            if (modelApp.checkUser(nameInput, passInput)) {
                 logInScene.getWindow().close();
                 modelApp.logUser();
             }
@@ -47,7 +47,7 @@ public class LogInController {
 
     private void serializable() throws ClassNotFoundException, IOException {
         FileOutputStream fos = new FileOutputStream("modelAppData.out");
-        ObjectOutputStream oos  = new ObjectOutputStream(fos);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(modelApp);
         oos.close();
     }

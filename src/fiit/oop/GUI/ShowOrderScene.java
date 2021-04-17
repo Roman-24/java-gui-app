@@ -21,6 +21,7 @@ public class ShowOrderScene {
     private GridPane grid = new GridPane();
     private ScrollPane scroll = new ScrollPane();
     private Group group = new Group();
+
     public ShowOrderScene(Stage primaryStage, ModelApp modelApp) {
 
         window = primaryStage;
@@ -31,7 +32,7 @@ public class ShowOrderScene {
         grid.setHgap(10);
 
         int row = 0;
-        for(Order order : modelApp.orders){
+        for (Order order : modelApp.orders) {
 
             Label customerID = new Label("CustomerID: " + order.getCustomerID());
             Label size = new Label("Veľkosť obleku je " + order.getSize());
@@ -41,7 +42,7 @@ public class ShowOrderScene {
             Label designDescription = new Label("Dizaj je: " + order.getDesignDescription());
             Label condition = new Label("Práce na objednávke sú vo fáze " + order.getCondition());
             Label enter = new Label(" ");
-            
+
             GridPane.setConstraints(customerID, 0, row++);
             GridPane.setConstraints(size, 0, row++);
             GridPane.setConstraints(typeOfSuit, 0, row++);
