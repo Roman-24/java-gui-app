@@ -8,15 +8,19 @@ import javafx.stage.Stage;
 import javafx.scene.layout.GridPane;
 
 public class ManagerScene {
-
     private Stage window = new Stage();
     private Scene scene;
     private GridPane grid = new GridPane();
     private Menu ordersMenu = new Menu("Objednávky");
     private MenuBar menuBar = new MenuBar();
     private BorderPane layout = new BorderPane();
+    private VBox vBox = new VBox(10);
     private Button checkOrdersButton = new Button("Skontroluj počet objednávok");
+    private Label ordersLabel = new Label("Aktuálny počet objednávok je: ");
     private Button logoutButton = new Button("Odhlasiť");
+    private Label deletOrderLabel = new Label("Zadajte číslo objednávky kt. chcete vymazať");
+    private TextField deletOrderField = new TextField();
+    private Button deletOrderButton = new Button("Vymazať objednávku");
 
     public ManagerScene(){
 
@@ -29,18 +33,44 @@ public class ManagerScene {
         // Menu items
         ordersMenu.getItems().add(new MenuItem("Zobraziť objednávky"));
         ordersMenu.getItems().add(new MenuItem("Pridať novú objednávku"));
-        // ordersMenu.getItems().add(new MenuItem("Otvoriť existujúcu objednávku"));
 
         menuBar.getMenus().addAll(ordersMenu);
 
         layout.setTop(menuBar);
-        layout.setLeft(checkOrdersButton);
-        layout.setRight(logoutButton);
+
+        vBox.getChildren().addAll(checkOrdersButton, ordersLabel, logoutButton);
+        vBox.getChildren().addAll(deletOrderLabel, deletOrderField, deletOrderButton);
+        vBox.setPadding(new Insets(50,50,50,50));
+
+        layout.setCenter(vBox);
 
         scene = new Scene(layout, 400,400);
 
         window.setScene(scene);
+    }
 
+    public Label getDeletOrderLabel() {
+        return deletOrderLabel;
+    }
+
+    public void setDeletOrderLabel(Label deletOrderLabel) {
+        this.deletOrderLabel = deletOrderLabel;
+    }
+
+    public TextField getDeletOrderField() {
+        return deletOrderField;
+    }
+
+    public void setDeletOrderField(TextField deletOrderField) {
+        this.deletOrderField = deletOrderField;
+    }
+
+    public Button getDeletOrderButton() {
+        return deletOrderButton;
+    }
+
+    public void setDeletOrderButton(Button deletOrderButton) {
+        this.deletOrderButton = deletOrderButton;
     }
 
     public Stage getWindow() {
@@ -91,12 +121,28 @@ public class ManagerScene {
         this.layout = layout;
     }
 
+    public VBox getvBox() {
+        return vBox;
+    }
+
+    public void setvBox(VBox vBox) {
+        this.vBox = vBox;
+    }
+
     public Button getCheckOrdersButton() {
         return checkOrdersButton;
     }
 
     public void setCheckOrdersButton(Button checkOrdersButton) {
         this.checkOrdersButton = checkOrdersButton;
+    }
+
+    public Label getOrdersLabel() {
+        return ordersLabel;
+    }
+
+    public void setOrdersLabel(Label ordersLabel) {
+        this.ordersLabel = ordersLabel;
     }
 
     public Button getLogoutButton() {

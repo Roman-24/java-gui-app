@@ -20,8 +20,9 @@ public abstract class Worker extends Person implements Serializable {
         this.orders = orders;
     }
 
-    public void work(){
+    public int work(){
         System.out.println("I like working");
+        return 0;
     }
 
     // getters and setters

@@ -26,7 +26,6 @@ public class TailorController {
         tailorScene.getWindow().show();
 
         tailorScene.getShowOrdersButton().setOnAction(e -> {
-            System.out.println("Zobrazenie objednávok");
             showOrderScene = new ShowOrderScene(new Stage(), modelApp);
         });
 
@@ -75,7 +74,7 @@ public class TailorController {
     }
 
     private void hookOrder(){
-        int orderNumber = Integer.valueOf(tailorScene.getIncludeOrderNumberInput().getText());
+        int orderNumber = Integer.parseInt(tailorScene.getIncludeOrderNumberInput().getText());
         this.order = modelApp.findOrder(orderNumber);
         System.out.println("Objednávka bola nastavená");
     }

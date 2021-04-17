@@ -20,11 +20,9 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) {
 
-        File file = new File("modelAppData.out");
-
         try {
             // deserializácia
-            FileInputStream fis = new FileInputStream(file);
+            FileInputStream fis = new FileInputStream(new File("modelAppData.out"));
             ObjectInputStream ois = new ObjectInputStream(fis);
             modelApp = (ModelApp) ois.readObject(); // down-casting object
             ois.close();

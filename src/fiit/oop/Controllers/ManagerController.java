@@ -5,7 +5,12 @@ import fiit.oop.GUI.CreateOrderScene;
 import fiit.oop.GUI.LogInScene;
 import fiit.oop.GUI.ManagerScene;
 import fiit.oop.GUI.ShowOrderScene;
+import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.stage.Stage;
+
+import java.util.Observable;
 
 public class ManagerController {
 
@@ -20,13 +25,10 @@ public class ManagerController {
         managerScene.getWindow().show();
 
         managerScene.getOrdersMenu().getItems().get(1).setOnAction(e -> {
-
-            System.out.println("Požiadavka na vytvorenie novej objednávky");
             createNewOrder();
         });
 
         managerScene.getOrdersMenu().getItems().get(0).setOnAction(e -> {
-            System.out.println("Zobrazenie objednávok");
             new ShowOrderScene(new Stage(), modelApp);
         });
 
@@ -35,7 +37,14 @@ public class ManagerController {
         });
 
         managerScene.getCheckOrdersButton().setOnAction(e -> {
-            modelApp.getManager().work();
+            managerScene.getOrdersLabel().textProperty().bind(new SimpleStringProperty(
+                    "Aktuálny počet objednávok je: " + modelApp.getManager().work()
+            ));
+        });
+
+        managerScene.getDeletOrderButton().setOnAction(e -> {
+            int deletOrderID = Integer.parseInt(managerScene.getDeletOrderField().getText());
+            modelApp.getManager().deletOrder(deletOrderID);
         });
     }
 
@@ -52,7 +61,6 @@ public class ManagerController {
 
             modelApp.addOrder(customerID, size, typeOfSuit, clothMaterial);
 
-            System.out.println("createNewOrder bolo uskutočnené");
             createOrderScene.getWindow().close();
         });
     }

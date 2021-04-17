@@ -29,13 +29,12 @@ public class DesignerController {
         designerScene.getWindow().show();
 
         designerScene.getShowOrdersButton().setOnAction(e -> {
-            System.out.println("Zobrazenie objednávok");
             showOrderScene = new ShowOrderScene(new Stage(), modelApp);
         });
 
         designerScene.getSetDesignButton().setOnAction(e -> {
 
-            int orderNumber = Integer.valueOf(designerScene.getIncludeOrderNumberInput().getText());
+            int orderNumber = Integer.parseInt(designerScene.getIncludeOrderNumberInput().getText());
             String designDescription =  designerScene.getIncludeYourDesignInput().getText();
 
             modelApp.findOrderAndSetDesign(orderNumber, designDescription);

@@ -35,10 +35,8 @@ public class LogInController {
 
             try {
                 serializable();
-            } catch (ClassNotFoundException classNotFoundException) {
+            } catch (ClassNotFoundException | IOException classNotFoundException) {
                 classNotFoundException.printStackTrace();
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
             }
 
             Platform.exit();

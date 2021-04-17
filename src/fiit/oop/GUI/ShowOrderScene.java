@@ -3,20 +3,24 @@ package fiit.oop.GUI;
 import fiit.oop.Core.ModelApp;
 import fiit.oop.Core.Order;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 public class ShowOrderScene {
 
     private Stage window;
-    private Scene scene;
+    Scene scene;
+    // možno vyskúšať...
+    // TextArea
     private GridPane grid = new GridPane();
-
+    private ScrollPane scroll = new ScrollPane();
+    private Group group = new Group();
     public ShowOrderScene(Stage primaryStage, ModelApp modelApp) {
 
         window = primaryStage;
@@ -52,7 +56,11 @@ public class ShowOrderScene {
             grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, designDescription, condition, enter);
         }
 
-        scene = new Scene(grid, 400, 600);
+        scroll.setContent(grid);
+
+        group.getChildren().addAll(grid, scroll);
+
+        scene = new Scene(group, 400, 600);
         window.setScene(scene);
         window.show();
     }
@@ -80,4 +88,5 @@ public class ShowOrderScene {
     public void setGrid(GridPane grid) {
         this.grid = grid;
     }
+
 }

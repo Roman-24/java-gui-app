@@ -27,13 +27,13 @@ public class Manager extends Worker implements Serializable {
     }
 
     @Override
-    public void work() { // Manager má kao prácu nejaké organizačné veci
+    public int work() { // Manager má kao prácu nejaké organizačné veci
         super.work();
         System.out.println("Manager pracuje 24/7");
-        checkTheOrders(); // napríklad vie zistiť koľko práve existuje objednávok
+        return checkTheOrders(); // napríklad vie zistiť koľko práve existuje objednávok
     }
 
-    public void checkTheOrders(){
+    public int checkTheOrders(){
 
         AtomicInteger count = new AtomicInteger();
         modelApp.orders.forEach((order -> { // Lambda výraz
@@ -42,7 +42,24 @@ public class Manager extends Worker implements Serializable {
                 count.getAndIncrement();
         }));
 
-        if(count.intValue() == modelApp.orders.size())
+        if(count.intValue() == modelApp.orders.size()){
             System.out.println("Aktuálne máme " + count + " objednávok");
+            return count.intValue();
+        } else
+            return 0;
+
+    }
+
+    public void deletOrder(int orderID){
+
+        modelApp.orders.forEach((order -> { // Lambda výraz
+
+            if(orderID == order.getCustomerID()){
+                modelApp.orders.remove(order);
+                System.out.println("Objednávka s číslom " + orderID + "bola vymazaná");
+            }
+
+
+        }));
     }
 }
