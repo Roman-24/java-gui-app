@@ -38,8 +38,7 @@ public class ManagerScene {
 
         layout.setTop(menuBar);
 
-        vBox.getChildren().addAll(checkOrdersButton, ordersLabel, logoutButton);
-        vBox.getChildren().addAll(deletOrderLabel, deletOrderField, deletOrderButton);
+        vBox.getChildren().addAll(checkOrdersButton, ordersLabel, deletOrderLabel, deletOrderField, deletOrderButton, logoutButton);
         vBox.setPadding(new Insets(50, 50, 50, 50));
 
         layout.setCenter(vBox);

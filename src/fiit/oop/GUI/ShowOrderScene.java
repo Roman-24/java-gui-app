@@ -7,6 +7,7 @@ import javafx.geometry.Orientation;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -20,7 +21,6 @@ public class ShowOrderScene {
     // TextArea
     private GridPane grid = new GridPane();
     private ScrollPane scroll = new ScrollPane();
-    private Group group = new Group();
 
     public ShowOrderScene(Stage primaryStage, ModelApp modelApp) {
 
@@ -57,11 +57,11 @@ public class ShowOrderScene {
             grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, designDescription, condition, enter);
         }
 
+        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scroll.setContent(grid);
 
-        group.getChildren().addAll(grid, scroll);
-
-        scene = new Scene(group, 400, 600);
+        scene = new Scene(scroll, 300, 500);
         window.setScene(scene);
         window.show();
     }
@@ -90,4 +90,11 @@ public class ShowOrderScene {
         this.grid = grid;
     }
 
+    public ScrollPane getScroll() {
+        return scroll;
+    }
+
+    public void setScroll(ScrollPane scroll) {
+        this.scroll = scroll;
+    }
 }
