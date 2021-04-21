@@ -16,9 +16,7 @@ import javafx.stage.Stage;
 public class ShowOrderScene {
 
     private Stage window;
-    Scene scene;
-    // možno vyskúšať...
-    // TextArea
+    private Scene scene;
     private GridPane grid = new GridPane();
     private ScrollPane scroll = new ScrollPane();
 
@@ -32,8 +30,10 @@ public class ShowOrderScene {
         grid.setHgap(10);
 
         int row = 0;
+        // vypísanie všetkých objednávok
         for (Order order : modelApp.orders) {
 
+            // nastavenie popiskov
             Label customerID = new Label("CustomerID: " + order.getCustomerID());
             Label size = new Label("Veľkosť obleku je " + order.getSize());
             Label typeOfSuit = new Label("Typ obleku je: " + order.getTypeOfSuit());
@@ -43,6 +43,7 @@ public class ShowOrderScene {
             Label condition = new Label("Práce na objednávke sú vo fáze " + order.getCondition());
             Label enter = new Label(" ");
 
+            // nastavenie pozície výpiskov
             GridPane.setConstraints(customerID, 0, row++);
             GridPane.setConstraints(size, 0, row++);
             GridPane.setConstraints(typeOfSuit, 0, row++);
@@ -54,13 +55,16 @@ public class ShowOrderScene {
 
             row++;
 
+            //nastavenie objektov do gridPane
             grid.getChildren().addAll(customerID, size, typeOfSuit, clothMaterial, design, designDescription, condition, enter);
         }
 
+        // nastavenie scroll varu
         scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scroll.setContent(grid);
 
+        // setnutie scény
         scene = new Scene(scroll, 300, 500);
         window.setScene(scene);
         window.show();

@@ -26,11 +26,13 @@ public class ModelApp implements ModelInterface, Serializable {
         this.orders = new ArrayList<>();
     }
 
+    // met=oda na pridanie novej objednávky do zoznamu objednávok
     public void addOrder(int customerID, int size, String typeOfSuit, String clothMaterial) {
         Order newOrder = new Order(customerID, size, typeOfSuit, clothMaterial);
         this.orders.add(newOrder);
     }
 
+    // vyhľadá objednávku kt. má byť nastavený dizajn a setne daný dizajn
     public void findOrderAndSetDesign(int orderID, String design) {
 
         // pôvodný loop bez lambda výrazu
@@ -48,6 +50,7 @@ public class ModelApp implements ModelInterface, Serializable {
         }));
     }
 
+    // vyhľadá objednávku pre dané ID
     @Override
     public Order findOrder(int orderID) {
 
@@ -59,6 +62,7 @@ public class ModelApp implements ModelInterface, Serializable {
         return null;
     }
 
+    // vytvorenia pracovníkov v systéme
     public List<Worker> staffInitialization() {
 
         List<Worker> workers = new ArrayList<Worker>(); // Generickosť
@@ -70,6 +74,7 @@ public class ModelApp implements ModelInterface, Serializable {
         return workers;
     }
 
+    //overí kto sa práve prihlasuje a či sú zadané údaje správne
     public boolean checkUser(String userIdString, String pass) {
 
         try {
@@ -94,21 +99,23 @@ public class ModelApp implements ModelInterface, Serializable {
         }
     }
 
+    // funkcia prihlási daného používateľa a určí aká príslušná scéna sa má vykresliť
     public void logUser() { // RTTI
 
         if (this.actualUser instanceof Manager) {
             ManagerScene managerScene = new ManagerScene();
-            ManagerController managerController = new ManagerController(managerScene, this);
+            new ManagerController(managerScene, this);
         } else if (this.actualUser instanceof Designer) {
             DesignerScene designerScene = new DesignerScene();
-            DesignerController designerController = new DesignerController(designerScene, this);
+            new DesignerController(designerScene, this);
 
         } else if (this.actualUser instanceof Tailor) {
             TailorScene tailorScene = new TailorScene();
-            TailorController tailorController = new TailorController(tailorScene, this);
+            new TailorController(tailorScene, this);
         }
     }
 
+    // vracia tailora
     public Tailor getTailor() {
         for (Worker i : workers)
             if (i instanceof Tailor)
@@ -116,6 +123,7 @@ public class ModelApp implements ModelInterface, Serializable {
         return null;
     }
 
+    // vracia managera
     public Manager getManager() {
         for (Worker i : workers)
             if (i instanceof Manager)

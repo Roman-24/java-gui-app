@@ -58,8 +58,6 @@ public class Manager extends Worker implements Serializable {
                 modelApp.orders.remove(order);
                 System.out.println("Objednávka s číslom " + orderID + "bola vymazaná");
             }
-
-
         }));
     }
 }

@@ -30,23 +30,20 @@ public class LogInScene {
         grid.setVgap(10);
         grid.setHgap(10);
 
+        // nastavenie rozmiestnenia popiskov a inputov
         GridPane.setConstraints(userNameLabel, 0, 0);
-
         GridPane.setConstraints(nameInput, 1, 0);
-
         GridPane.setConstraints(passLabel, 0, 1);
-
         GridPane.setConstraints(passInput, 1, 1);
-
         GridPane.setConstraints(loginButton, 1, 2);
         GridPane.setConstraints(exitButton, 1, 3);
 
+        // nastavenie objektov do gridPane
         grid.getChildren().addAll(userNameLabel, nameInput, passLabel, passInput, loginButton, exitButton);
 
+        // nastavenie scény
         scene = new Scene(grid, 400, 400);
-
         window.setScene(scene);
-
         window.show();
 
     }

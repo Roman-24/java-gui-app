@@ -10,11 +10,10 @@ import fiit.oop.People.Tailor;
 import fiit.oop.People.Worker;
 import javafx.stage.Stage;
 
-public class TailorController {
+public class TailorController extends Controller {
 
     private TailorScene tailorScene;
     private ModelApp modelApp;
-    private ShowOrderScene showOrderScene;
     private Tailor tailor;
     private Order order;
 
@@ -23,16 +22,20 @@ public class TailorController {
         this.tailorScene = tailorScene;
         this.modelApp = modelApp;
 
+        // vykreslenie tailor scény
         tailorScene.getWindow().show();
 
+        // nastavenie akcie pre ShowOrdersButton
         tailorScene.getShowOrdersButton().setOnAction(e -> {
-            showOrderScene = new ShowOrderScene(new Stage(), modelApp);
+            new ShowOrderScene(new Stage(), modelApp);
         });
 
         if (modelApp.getTailor() != null) {
 
+            // nájdenie tailora v modelApp
             tailor = modelApp.getTailor();
 
+            // nastavenie akciií pre výrobné tlačítka
             tailorScene.getPrepareTheClothButton().setOnAction(e -> {
                 hookOrder();
                 tailor.prepareTheCloth(order);
@@ -59,23 +62,47 @@ public class TailorController {
             });
         }
 
+        // nastavenie akcie pre LogoutButton (odhlásenie a nastavenie login scény)
         tailorScene.getLogoutButton().setOnAction(e -> {
-            reLog();
+            logOut(tailorScene.getWindow(), modelApp);
         });
 
-    }
-
-    private void reLog() {
-
-        this.tailorScene.getWindow().close();
-
-        LogInScene logInScene = new LogInScene(new Stage());
-        LogInController logInController = new LogInController(logInScene, modelApp);
     }
 
     private void hookOrder() {
         int orderNumber = Integer.parseInt(tailorScene.getIncludeOrderNumberInput().getText());
         this.order = modelApp.findOrder(orderNumber);
-        System.out.println("Objednávka bola nastavená");
+    }
+
+    public TailorScene getTailorScene() {
+        return tailorScene;
+    }
+
+    public void setTailorScene(TailorScene tailorScene) {
+        this.tailorScene = tailorScene;
+    }
+
+    public ModelApp getModelApp() {
+        return modelApp;
+    }
+
+    public void setModelApp(ModelApp modelApp) {
+        this.modelApp = modelApp;
+    }
+
+    public Tailor getTailor() {
+        return tailor;
+    }
+
+    public void setTailor(Tailor tailor) {
+        this.tailor = tailor;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }

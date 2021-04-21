@@ -28,12 +28,14 @@ public class TailorScene {
         window.setTitle("Ste prihlásený ako Tailor");
 
         vbox.setPadding(new Insets(10, 10, 10, 10));
+
+        // nastavenei objektov pre gridPane
         vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput,
                 prepareTheClothButton, makeRoughVersionButton, earsTopSuitButton, earsBottomSuitButton, finalizeSuitButton,
                 logoutButton);
 
+        // nastavenie scény
         scene = new Scene(vbox, 400, 400);
-
         window.setScene(scene);
     }
 
@@ -43,6 +45,14 @@ public class TailorScene {
 
     public void setWindow(Stage window) {
         this.window = window;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     public VBox getVbox() {
@@ -83,14 +93,6 @@ public class TailorScene {
 
     public void setLogoutButton(Button logoutButton) {
         this.logoutButton = logoutButton;
-    }
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
     }
 
     public Button getPrepareTheClothButton() {

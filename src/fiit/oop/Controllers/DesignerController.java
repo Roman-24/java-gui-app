@@ -11,7 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class DesignerController {
+public class DesignerController extends Controller {
 
     private Stage window = new Stage();
     private GridPane grid = new GridPane();
@@ -26,35 +26,33 @@ public class DesignerController {
         this.designerScene = designerScene;
         this.modelApp = modelApp;
 
+        // vykreslenie dizajner scény
         designerScene.getWindow().show();
 
+        // Nastavenie akcie pre ShowOrdersButton
         designerScene.getShowOrdersButton().setOnAction(e -> {
             showOrderScene = new ShowOrderScene(new Stage(), modelApp);
         });
 
+        // Nastavenie akcie pre SetDesignButton
         designerScene.getSetDesignButton().setOnAction(e -> {
 
+            // načíta sa zadané ID objednávky
             int orderNumber = Integer.parseInt(designerScene.getIncludeOrderNumberInput().getText());
             String designDescription = designerScene.getIncludeYourDesignInput().getText();
 
+            // vyhľadá sa príslušná objednávka a tej sa priradí zadaný dizajn
             modelApp.findOrderAndSetDesign(orderNumber, designDescription);
 
+            // zatvorenie okna s objednávkami
             if (showOrderScene != null)
                 showOrderScene.getWindow().close();
-
         });
 
+        // nastavenie akcie pre LogoutButton (odhlásenie a nastavenie login scény)
         designerScene.getLogoutButton().setOnAction(e -> {
-            reLog();
+            logOut(designerScene.getWindow(), modelApp);
         });
-    }
-
-    private void reLog() {
-
-        designerScene.getWindow().close();
-
-        LogInScene logInScene = new LogInScene(new Stage());
-        LogInController logInController = new LogInController(logInScene, modelApp);
     }
 
     public Stage getWindow() {

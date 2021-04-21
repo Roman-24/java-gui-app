@@ -18,33 +18,38 @@ public class LogInController {
         this.logInScene = logInScene;
         this.modelApp = modelApp;
 
+        // nastavenie akcie pre LoginButton
         logInScene.getLoginButton().setOnAction(e -> {
 
+            // naskenovanie mena a hesla od používateľa
             String nameInput = logInScene.getNameInput().getText();
             String passInput = logInScene.getPassInput().getText();
 
+            // skontrolovanie údajov a prihlásenie používateľa
             if (modelApp.checkUser(nameInput, passInput)) {
                 logInScene.getWindow().close();
                 modelApp.logUser();
             }
         });
 
+        // nastavenie akcie pre ExitButton
         logInScene.getExitButton().setOnAction(e -> {
 
             System.out.println("Ukončujem program..");
 
+            // serializácia modelu
             try {
                 serializable();
             } catch (ClassNotFoundException | IOException classNotFoundException) {
                 classNotFoundException.printStackTrace();
             }
 
-            Platform.exit();
+            // ukončenie behu progrmau
             System.exit(0);
-
         });
     }
 
+    // metóda vykoná serializáciu modelu aplikácie
     private void serializable() throws ClassNotFoundException, IOException {
         FileOutputStream fos = new FileOutputStream("modelAppData.out");
         ObjectOutputStream oos = new ObjectOutputStream(fos);

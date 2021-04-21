@@ -26,11 +26,13 @@ public class DesignerScene {
         window.setTitle("Ste prihlásený ako Designer");
 
         vbox.setPadding(new Insets(10, 10, 10, 10));
+
+        // nastavenie objektov do vbox
         vbox.getChildren().addAll(showOrdersButton, includeOrderNumber, includeOrderNumberInput,
                 includeYourDesign, includeYourDesignInput, setDesignButton, logoutButton);
 
+        // nastavenie scény
         scene = new Scene(vbox, 400, 400);
-
         window.setScene(scene);
     }
 

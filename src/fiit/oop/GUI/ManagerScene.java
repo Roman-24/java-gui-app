@@ -34,17 +34,18 @@ public class ManagerScene {
         ordersMenu.getItems().add(new MenuItem("Zobraziť objednávky"));
         ordersMenu.getItems().add(new MenuItem("Pridať novú objednávku"));
 
+        // setnutie itemov do menu
         menuBar.getMenus().addAll(ordersMenu);
 
         layout.setTop(menuBar);
 
+        // nastavenie objektov do vbox
         vBox.getChildren().addAll(checkOrdersButton, ordersLabel, deletOrderLabel, deletOrderField, deletOrderButton, logoutButton);
         vBox.setPadding(new Insets(50, 50, 50, 50));
 
+        // setnutie scény
         layout.setCenter(vBox);
-
         scene = new Scene(layout, 400, 400);
-
         window.setScene(scene);
     }
 
