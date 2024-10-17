@@ -1,28 +1,28 @@
-# Tea suits – výroba luxusných oblekov
+# Tea Suits – Luxury Suit Manufacturing
 
-## Popis programu
-Jedná sa o butik/krajčírstvo, kt. cieľom je výroba luxusných oblekov na objednávku. Cieľom môjho programu je vytvoriť systém na spravovanie objednávok a reprezentácia určitých výrobných procesov. Hlavnou pointov systému je že máme jednotlivých používateľov, kt. sa do systému prihlasujú a podľa toho akú majú pozíciu môžu vykonávať rôzne úkony v systéme.
+## Program Description
+This is a boutique/tailoring shop aimed at producing luxury suits on demand. The goal of my program is to create a system for managing orders and representing certain production processes. The main point of the system is that there are individual users who log into the system, and depending on their role, they can perform different actions within the system.
 
 ### Manager
-Do systému vie pridávať objednávky, nechať si zobraziť všetky objednávky, mazať objednávky a nechať zobraziť koľko objednávok je aktuálne v systéme.
+The manager can add orders to the system, view all orders, delete orders, and display the current number of orders in the system.
 
 ### Designer
-Dokáže si nechať zobraziť všetky objednávky a zadať číslo objednávky pre ktorú chce priradiť určitý dizajn.
+The designer can view all orders and assign a specific design to an order by entering its order number.
 
 ### Tailor
-Používateľ Tailor akoby reprezentuje určité výrovné procesy, konkrétne sa jedná o 5 výrobných procesov, ktoré vie na jednotlivých objednávkach vykonávať. Tieto zmeny systém registruje a rovnako je aj ošetrené aby tieto výrobne procesy prebehli v správnom poradí.
+The tailor represents certain manufacturing processes, specifically five production steps, which can be performed on individual orders. The system tracks these changes and ensures that the production steps are completed in the correct order.
 
-##### Prístupy pre používateľov
+##### User Access
 <p>
-Manager
-ID: 420
-Heslo: 0000
+Manager  
+ID: 420  
+Password: 0000
 
-Designer
-ID: 421
-Heslo: 0000
+Designer  
+ID: 421  
+Password: 0000
 
-Tailor
-ID: 430
-Heslo: 0000
+Tailor  
+ID: 430  
+Password: 0000
 </p>
